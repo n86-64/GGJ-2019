@@ -118,15 +118,20 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 887342051}
     m_Modifications:
+    - target: {fileID: 114512808156536762, guid: ec8d03cee30080f4f9fa525872313f84,
+        type: 2}
+      propertyPath: pointerPos.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4858618164647102, guid: ec8d03cee30080f4f9fa525872313f84, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 409.06046
+      value: -72.939545
       objectReference: {fileID: 0}
     - target: {fileID: 4858618164647102, guid: ec8d03cee30080f4f9fa525872313f84, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 29.297554
+      value: -239.20245
       objectReference: {fileID: 0}
     - target: {fileID: 4858618164647102, guid: ec8d03cee30080f4f9fa525872313f84, type: 2}
       propertyPath: m_LocalPosition.z
@@ -134,15 +139,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4858618164647102, guid: ec8d03cee30080f4f9fa525872313f84, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4858618164647102, guid: ec8d03cee30080f4f9fa525872313f84, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4858618164647102, guid: ec8d03cee30080f4f9fa525872313f84, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4858618164647102, guid: ec8d03cee30080f4f9fa525872313f84, type: 2}
       propertyPath: m_LocalRotation.w
@@ -150,7 +155,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4858618164647102, guid: ec8d03cee30080f4f9fa525872313f84, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114512808156536762, guid: ec8d03cee30080f4f9fa525872313f84,
         type: 2}
@@ -166,6 +171,16 @@ Prefab:
       propertyPath: m_Name
       value: menuObject
       objectReference: {fileID: 0}
+    - target: {fileID: 114512808156536762, guid: ec8d03cee30080f4f9fa525872313f84,
+        type: 2}
+      propertyPath: pointerPos.Array.data[0]
+      value: 
+      objectReference: {fileID: 2006386203}
+    - target: {fileID: 114512808156536762, guid: ec8d03cee30080f4f9fa525872313f84,
+        type: 2}
+      propertyPath: pointerPos.Array.data[1]
+      value: 
+      objectReference: {fileID: 942045526}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec8d03cee30080f4f9fa525872313f84, type: 2}
   m_IsPrefabAsset: 0
@@ -231,6 +246,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &414551701 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4858618164647102, guid: ec8d03cee30080f4f9fa525872313f84,
+    type: 2}
+  m_PrefabInternal: {fileID: 18816903}
 --- !u!1 &452246623
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +492,9 @@ RectTransform:
   m_Children:
   - {fileID: 764733961}
   - {fileID: 1494576190}
+  - {fileID: 414551701}
+  - {fileID: 2006386204}
+  - {fileID: 942045527}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -480,6 +503,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &942045526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 942045527}
+  - component: {fileID: 942045528}
+  m_Layer: 5
+  m_Name: Point2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &942045527
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942045526}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 887342051}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -110, y: 67.4}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &942045528
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942045526}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1109381095
 Prefab:
   m_ObjectHideFlags: 0
@@ -691,3 +755,44 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224069913680136698, guid: 67c4ddf55dc160c4ca8884d044bdb835,
     type: 2}
   m_PrefabInternal: {fileID: 1494576188}
+--- !u!1 &2006386203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2006386204}
+  - component: {fileID: 2006386205}
+  m_Layer: 5
+  m_Name: Point1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2006386204
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2006386203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 887342051}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -110, y: 141.4}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2006386205
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2006386203}
+  m_CullTransparentMesh: 0
