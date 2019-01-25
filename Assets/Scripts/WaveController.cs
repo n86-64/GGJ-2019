@@ -6,11 +6,14 @@ public class WaveController : MonoBehaviour
 {
     public Wave[] waves;
 
+    [HideInInspector]
     public int currentWave = 0;
 
 
     public void SpawnNextWave()
     {
+        ActivateWaveUI();
+
         currentWave++;
         Wave newWave = waves[currentWave];
 
@@ -18,8 +21,14 @@ public class WaveController : MonoBehaviour
         {
             GameObject unit = Instantiate(newWave.prefab);
             //instantiate as an enemy type
-            //new list of units
+            //add behaviour to it based on type
+            //new list of units?
         }
+    }
+
+    private void ActivateWaveUI()
+    {
+
     }
 	
 }
