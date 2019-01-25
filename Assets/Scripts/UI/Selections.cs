@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Quit : MonoBehaviour
+public class Selections : MonoBehaviour
 {
     public void QuitGame()
     {
         Application.Quit();
+        Debug.Log("Exit Mate");
     }
 }
