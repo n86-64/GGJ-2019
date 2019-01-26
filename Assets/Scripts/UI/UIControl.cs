@@ -26,9 +26,16 @@ public class UIControl : MonoBehaviour {
         inGameDisplay.SetActive(!paused);
     }
 
-
     public void GoToLevel(string name)
     {
         SceneManager.LoadScene(name); 
+    }
+
+
+    public void ResetGame()
+    {
+        GameObject gameOverMenu = GameObject.FindGameObjectWithTag("GameOver");
+        gameOverMenu.SetActive(false);
+        // Run the reset logic for the menus.
     }
 }

@@ -6,11 +6,17 @@ public class Objective : MonoBehaviour {
 
     [SerializeField]
     private float health = 100;
+
+    [SerializeField]
+    private GameObject gameOverMenu;
+
     public float maxHealth = 100;
 
 	// Use this for initialization
 	void Start ()
     {
+        gameOverMenu = GameObject.FindGameObjectWithTag("GameOver");
+        gameOverMenu.SetActive(false); 
         health = maxHealth;
 	}
 	
@@ -26,8 +32,9 @@ public class Objective : MonoBehaviour {
     void Dead()
     {
         // Im Dead end the game.
-        Debug.Log("Were dead mate"); 
-        return;
+        Debug.Log("Were dead mate");
+        gameOverMenu.SetActive(true);
+        // Stop the enemies. Maybe get them to do a little dance.
     }
 
     public void TakeDamage(float damage)
