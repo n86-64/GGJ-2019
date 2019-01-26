@@ -11,41 +11,43 @@ public class FollowCamera : MonoBehaviour
     public float zoomSpeed = 1;
     private Vector3 startPos;
 
+    public bool scrollToZoom = false;
+
     private void LateUpdate()
     {
+        float camZoom = cam.orthographicSize;
+        if (scrollToZoom)
+        {
+            camZoom += Input.GetAxis("Mouse ScrollWheel") * 5;
+            Debug.Log("cam zoom " + camZoom);
+            cam.orthographicSize = Mathf.Clamp(camZoom, 3, 15);
+        }
+
         if (Vector3.Distance(transform.position, objToFollow.position) > 0.1f)
         {
             transform.position = Vector3.Lerp(
                 transform.position, objToFollow.position,
                 Time.deltaTime * speed);
 
-            if (Vector3.Distance(startPos, transform.position) <
-                Vector3.Distance(transform.position, objToFollow.position))
+            
+            if (!scrollToZoom)
             {
-                cam.orthographicSize += Time.deltaTime * zoomSpeed;
+                if (Vector3.Distance(startPos, transform.position) <
+                    Vector3.Distance(transform.position, objToFollow.position))
+                {
+                    camZoom += Time.deltaTime * zoomSpeed;
+                }
+                else
+                {
+                    camZoom -= Time.deltaTime * zoomSpeed;
+                }
             }
-            else
-            {
-                cam.orthographicSize -= Time.deltaTime * zoomSpeed;
-            }
-            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 3, 5);
-
-            //float t = Mathf.InverseLerp(
-            //    startPos.magnitude, objToFollow.position.magnitude,
-            //    transform.position.magnitude);
-            //t = Mathf.SmoothStep(0, 1, t);
-            //cam.orthographicSize = Mathf.Lerp(5, 3, Time.deltaTime * speed);
+            
+            cam.orthographicSize = Mathf.Clamp(camZoom, 3, 15);
         }
         else
         {
             startPos = transform.position;
-            //cam.orthographicSize = Mathf.Lerp(3, 5, Time.deltaTime * speed);
         }
-
-        
-        //Debug.Log(distance * Mathf.Sin(Time.deltaTime * speed));
-
-        //distance *= Mathf.Sin(Time.deltaTime * speed);//3 + (Vector3.Distance(transform.position, objToFollow.position) / 2);
-        
     }
 }
