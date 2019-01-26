@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     private int damage = 2;
     private int moveSpeed = 20;
 
+    private int lifetime = 100;
+
     private void Awake()
     {
         transform.position += offsetPosition;
@@ -39,10 +41,18 @@ public class Enemy : MonoBehaviour
                 moveSpeed = 20;
                 break;
         }
+
+        StartCoroutine(DestroyAfterLifetime());
     }
 
     public int GetMoveSpeed()
     {
         return moveSpeed;
+    }
+
+    IEnumerator DestroyAfterLifetime()
+    {
+        yield return new WaitForSeconds(lifetime);
+        Destroy(gameObject);
     }
 }

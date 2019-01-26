@@ -22,7 +22,7 @@ public class Wave
     //Multiplier on their stats
     public int strength;
 
-    public GameObject prefab;
+    //public GameObject prefab;
 
     public int totalToSpawn
     {

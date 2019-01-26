@@ -51,35 +51,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5f47fbc039e7d439afcf900e240fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratPrefab: {fileID: 1292595047243120, guid: 98982fe4e5115e64fa233e2fe09fd50e, type: 2}
-  burglarPrefab: {fileID: 1292595047243120, guid: 98982fe4e5115e64fa233e2fe09fd50e,
+  ratPrefab: {fileID: 1300459659303002, guid: 9394c2d3edd863e4cac1ef221a4b8070, type: 2}
+  burglarPrefab: {fileID: 1300459659303002, guid: 9394c2d3edd863e4cac1ef221a4b8070,
     type: 2}
-  clubberPrefab: {fileID: 1292595047243120, guid: 98982fe4e5115e64fa233e2fe09fd50e,
+  clubberPrefab: {fileID: 1300459659303002, guid: 9394c2d3edd863e4cac1ef221a4b8070,
     type: 2}
-  positionOffset: {x: -3, y: 3}
+  positionOffset: {x: -5, y: 5}
   waves:
   - enemies:
     - type: 0
-      count: 5
-      intervalUntilNext: 0
-    - type: 2
-      count: 2
-      intervalUntilNext: 0
-    timeBeforeNextSpawn: 4
-    strength: 0
-    prefab: {fileID: 1292595047243120, guid: 98982fe4e5115e64fa233e2fe09fd50e, type: 2}
-  - enemies:
-    - type: 0
-      count: 5
-      intervalUntilNext: 1
-    - type: 2
       count: 10
       intervalUntilNext: 0
-    - type: 1
-      count: 2
-      intervalUntilNext: 0
     timeBeforeNextSpawn: 4
     strength: 0
-    prefab: {fileID: 1292595047243120, guid: 98982fe4e5115e64fa233e2fe09fd50e, type: 2}
   currentWave: 0
   activeUnits: []
