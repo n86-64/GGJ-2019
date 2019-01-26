@@ -50,13 +50,18 @@ public class TurretAOEController : Tower
         }
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
+
         if (other.tag == "Enemy")
         {
+            Debug.Log("Enemy");
+
             if (!enemies.Contains(other.gameObject))
+            {
                 enemies.Add(other.gameObject);
+            }
         }
     }
 

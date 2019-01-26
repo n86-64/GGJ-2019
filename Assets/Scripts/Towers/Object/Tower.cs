@@ -11,4 +11,32 @@ public class Tower : MonoBehaviour
     [SerializeField]
     protected List<GameObject> enemies = new List<GameObject>();
     protected float timeElapsed = 0;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.tag);
+
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("Enemy");
+
+            if (!enemies.Contains(other.gameObject))
+            {
+                enemies.Add(other.gameObject);
+            }
+        }
+
+        if (other.tag == "Player")
+        {
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            enemies.Remove(other.gameObject);
+        }
+    }
 }

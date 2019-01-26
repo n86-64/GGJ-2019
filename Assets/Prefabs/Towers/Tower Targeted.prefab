@@ -73,6 +73,8 @@ GameObject:
   - component: {fileID: 33364352929503374}
   - component: {fileID: 23606845726522072}
   - component: {fileID: 136150382947841976}
+  - component: {fileID: 114485757018064516}
+  - component: {fileID: 135625853998490990}
   m_Layer: 0
   m_Name: Tower Targeted
   m_TagString: Untagged
@@ -107,7 +109,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4227020866968182}
   - component: {fileID: 114198175526751982}
-  - component: {fileID: 135806832858504692}
   - component: {fileID: 54683274287604530}
   m_Layer: 0
   m_Name: BulletSpawn
@@ -351,19 +352,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3350c602c7186e047ac3c166237bf7ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  searchRadius: 10
+  timeBetweenShots: 1
+  enemies: []
   bulletPrefab: {fileID: 1138708420968802, guid: 57b744af5e99f644cb4d9804e5b6f8a7,
     type: 2}
   psBarrelSmoke: {fileID: 198299684141737328}
   psBarrelSparks: {fileID: 198669620006342326}
+--- !u!114 &114485757018064516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677246292990460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3350c602c7186e047ac3c166237bf7ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   searchRadius: 10
-  enemies: []
   timeBetweenShots: 1
---- !u!135 &135806832858504692
+  enemies: []
+  bulletPrefab: {fileID: 1138708420968802, guid: 57b744af5e99f644cb4d9804e5b6f8a7,
+    type: 2}
+  psBarrelSmoke: {fileID: 198590027429070020, guid: c848509db9b9f1046b922c902526e725,
+    type: 2}
+  psBarrelSparks: {fileID: 198419658660824108, guid: 58da6101bb2b547458b3aadea4107b35,
+    type: 2}
+--- !u!135 &135625853998490990
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1932955197707502}
+  m_GameObject: {fileID: 1677246292990460}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -391,10 +412,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198299684141737328
 ParticleSystem:
   m_ObjectHideFlags: 1

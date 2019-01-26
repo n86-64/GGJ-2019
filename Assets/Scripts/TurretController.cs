@@ -2,22 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretController : MonoBehaviour
+public class TurretController : Tower
 {
+    public GameObject gun; 
     public GameObject bulletPrefab;
     private List<GameObject> bullets;
     private int amountToPool = 20;
 
     public ParticleSystem psBarrelSmoke;
     public ParticleSystem psBarrelSparks;
-
-    public float searchRadius = 10;
-    
-    [SerializeField]
-    private List<GameObject> enemies = new List<GameObject>();
-
-    public float timeBetweenShots = 1;
-    private float timeElapsed = 0;
 
     private void Start()
     {
@@ -48,7 +41,7 @@ public class TurretController : MonoBehaviour
 
         if (closestEnemy != null)
         {
-            transform.parent.LookAt(closestEnemy.transform.position);
+            gun.transform.LookAt(closestEnemy.transform.position);
             Fire(closestEnemy);
         }
     }
@@ -70,24 +63,6 @@ public class TurretController : MonoBehaviour
         else
         {
             timeElapsed += Time.deltaTime;
-        }
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            if (!enemies.Contains(other.gameObject))
-                enemies.Add(other.gameObject);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            enemies.Remove(other.gameObject);
         }
     }
 
