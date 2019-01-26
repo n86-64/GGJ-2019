@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerBaseSelection : MonoBehaviour {
+public class TowerBaseSelection : MonoBehaviour
+{
 
     private GameObject UISelectionObject;
     private List<TowerPlace> towerSelections = new List<TowerPlace>();

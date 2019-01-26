@@ -4,5 +4,24 @@ using UnityEngine;
 
 public class TowerPlace : MonoBehaviour
 {
-    // Base class for a tower.
+    public GameObject spawnPos;
+    public Tower currentSelectedTower;
+
+    // Place a tower.
+    public void placeTower(Tower newTower)
+    {
+        if(currentSelectedTower == null)
+        {
+            currentSelectedTower = newTower;
+            currentSelectedTower.transform.position = spawnPos.transform.position;
+        }
+    }
+
+    void clearTower()
+    {
+        // TODO - Destroy the tower. 
+        currentSelectedTower = null;
+    }
+
+
 }
