@@ -4,9 +4,9 @@ using System.Collections;
 //Place this on any object to make it move across the level as an enemy
 public class Movement : MonoBehaviour
 {
-    public MovementController movementController;
-
-    public Rigidbody rb;
+    private MovementController movementController;
+    private Rigidbody rb;
+    private Enemy enemy;
 
     public Vector3 moveToPoint;
     public Vector3 offsetToPoint;
@@ -14,30 +14,33 @@ public class Movement : MonoBehaviour
     public int currentPointIndex;
 
     public float distanceFromPointCheck; //How close to the next point before going to next position
-    public float tempSpeed; //This will be replaced by Enemy Speed;
-    public float rotationSpeed; //The speed the unit rotates to head towards the point;
+    private float rotationSpeed; //The speed the unit rotates to head towards the point;
     public bool canMove;
 
     private void Start()
     {
-        movementController = FindObjectOfType<MovementController>();
+        movementController = GameObject.FindGameObjectWithTag("MasterPositions").GetComponent<MovementController>();
+        rb = GetComponent<Rigidbody>();
+        enemy = GetComponent<Enemy>();
+        rotationSpeed = enemy.GetMoveSpeed() / 2;
 
         moveToPoint = movementController.masterPositions[currentPointIndex].position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
 
     void CheckNextPoint()
     {
+        if (!gameObject.activeInHierarchy)
+            return;
+
         currentPointIndex++;
-
-
-        if (currentPointIndex > movementController.masterPositions.Count)
+        
+        if (currentPointIndex >= movementController.masterPositions.Count)
         {
-
             TempRemoveUnit();
             return;
         }
@@ -45,16 +48,13 @@ public class Movement : MonoBehaviour
         {
             moveToPoint = movementController.masterPositions[currentPointIndex].position;
             offsetToPoint = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
-
         }
     }
 
     void RotateTowardsPoint()
     {
         Vector3 lookAtGoal = new Vector3(moveToPoint.x, transform.position.y, moveToPoint.z);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(directionToPoint), Time.deltaTime * rotationSpeed);
-
-
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(directionToPoint), Time.deltaTime * rotationSpeed);   
     }
 
 
@@ -64,11 +64,9 @@ public class Movement : MonoBehaviour
         {
             directionToPoint = (moveToPoint + offsetToPoint) - transform.position;
 
-
-            rb.AddRelativeForce(new Vector3(0, 0, tempSpeed));
+            rb.AddRelativeForce(new Vector3(0, 0, enemy.GetMoveSpeed()));
             Vector3.ClampMagnitude(rb.velocity, 10);
 
-            //transform.Translate(transform.forward * tempSpeed * Time.deltaTime, Space.World);
             RotateTowardsPoint();
 
             if (Vector3.Distance(transform.position, moveToPoint) <= distanceFromPointCheck)
@@ -83,7 +81,10 @@ public class Movement : MonoBehaviour
     {
         //Add points
         print("Enemy should die");
-        transform.gameObject.SetActive(false);
+
+        WaveController.instance.activeUnits.Remove(gameObject);
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
 }
