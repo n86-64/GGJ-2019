@@ -4,7 +4,7 @@ using System.Collections;
 //Place this on any object to make it move across the level as an enemy
 public class Movement : MonoBehaviour
 {
-    private MovementController movementController;
+    public MovementController routeController;
     private Rigidbody rb;
     private Enemy enemy;
 
@@ -13,18 +13,21 @@ public class Movement : MonoBehaviour
     public Vector3 directionToPoint;
     public int currentPointIndex;
 
+    public float maxSpeed = 8.0f;
+    public float acceleration = 8.0f;
+
     public float distanceFromPointCheck; //How close to the next point before going to next position
     private float rotationSpeed; //The speed the unit rotates to head towards the point;
     public bool canMove;
 
     private void Start()
     {
-        movementController = GameObject.FindGameObjectWithTag("MasterPositions").GetComponent<MovementController>();
+        //routeController = GameObject.FindGameObjectWithTag("MasterPositions").GetComponent<MovementController>();
         rb = GetComponent<Rigidbody>();
         enemy = GetComponent<Enemy>();
         rotationSpeed = enemy.GetMoveSpeed() / 2;
 
-        moveToPoint = movementController.masterPositions[currentPointIndex].position;
+        moveToPoint = routeController.masterPositions[currentPointIndex].position;
     }
 
     void FixedUpdate()
@@ -39,14 +42,14 @@ public class Movement : MonoBehaviour
 
         currentPointIndex++;
         
-        if (currentPointIndex >= movementController.masterPositions.Count)
+        if (currentPointIndex >= routeController.masterPositions.Count)
         {
             TempRemoveUnit();
             return;
         }
         else
         {
-            moveToPoint = movementController.masterPositions[currentPointIndex].position;
+            moveToPoint = routeController.masterPositions[currentPointIndex].position;
             offsetToPoint = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
         }
     }
@@ -64,8 +67,12 @@ public class Movement : MonoBehaviour
         {
             directionToPoint = (moveToPoint + offsetToPoint) - transform.position;
 
-            rb.AddRelativeForce(new Vector3(0, 0, enemy.GetMoveSpeed()));
-            Vector3.ClampMagnitude(rb.velocity, 10);
+            if (rb.velocity.magnitude <= maxSpeed)
+            {
+                rb.AddRelativeForce(new Vector3(0, 0, acceleration));
+            }
+
+            //Vector3.ClampMagnitude(rb.velocity, 10);
 
             RotateTowardsPoint();
 

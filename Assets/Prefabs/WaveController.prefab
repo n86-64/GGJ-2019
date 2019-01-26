@@ -56,12 +56,21 @@ MonoBehaviour:
     type: 2}
   clubberPrefab: {fileID: 1300459659303002, guid: 9394c2d3edd863e4cac1ef221a4b8070,
     type: 2}
-  positionOffset: {x: -5, y: 5}
+  positionOffset: {x: -10, y: 10}
   waves:
   - enemies:
     - type: 0
-      count: 10
-      intervalUntilNext: 0
+      count: 8
+      intervalUntilNext: 5
+      route: {fileID: 0}
+    - type: 0
+      count: 8
+      intervalUntilNext: 5
+      route: {fileID: 0}
+    - type: 0
+      count: 8
+      intervalUntilNext: 5
+      route: {fileID: 0}
     timeBeforeNextSpawn: 4
     strength: 0
   currentWave: 0

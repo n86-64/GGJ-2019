@@ -39,8 +39,11 @@ public class WaveController : MonoBehaviour
                 GameObject unit = Instantiate(GetPrefab(group.type));
                 float randX = (float)(Random.Range(positionOffset.x * 10, positionOffset.y * 10) / 10);
                 float randZ = (float)(Random.Range(positionOffset.x * 10, positionOffset.y * 10) / 10);
+                unit.GetComponent<Enemy>().origin = group.route.masterPositions[0].position;
                 unit.GetComponent<Enemy>().offsetPosition = new Vector3(randX, unit.transform.position.y, randZ);
                 unit.GetComponent<Enemy>().type = group.type;
+                unit.GetComponent<Movement>().routeController = group.route;
+                unit.transform.localScale *= 0.4f;
                 unit.SetActive(true);
                 activeUnits.Add(unit);
 
