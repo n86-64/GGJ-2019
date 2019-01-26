@@ -11,6 +11,7 @@ public class TurretController : MonoBehaviour
     public float searchRadius = 10;
     public LayerMask enemyLayer;
     
+    [SerializeField]
     private List<GameObject> enemies = new List<GameObject>();
 
     public float rateOfFire = 1;
