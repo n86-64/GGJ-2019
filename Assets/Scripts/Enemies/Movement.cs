@@ -4,7 +4,7 @@ using System.Collections;
 //Place this on any object to make it move across the level as an enemy
 public class Movement : MonoBehaviour
 {
-    private MovementController movementController;
+    public MovementController routeController;
     private Rigidbody rb;
     private Enemy enemy;
 
@@ -22,12 +22,12 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        movementController = GameObject.FindGameObjectWithTag("MasterPositions").GetComponent<MovementController>();
+        //routeController = GameObject.FindGameObjectWithTag("MasterPositions").GetComponent<MovementController>();
         rb = GetComponent<Rigidbody>();
         enemy = GetComponent<Enemy>();
         rotationSpeed = enemy.GetMoveSpeed() / 2;
 
-        moveToPoint = movementController.masterPositions[currentPointIndex].position;
+        moveToPoint = routeController.masterPositions[currentPointIndex].position;
     }
 
     void FixedUpdate()
@@ -42,14 +42,14 @@ public class Movement : MonoBehaviour
 
         currentPointIndex++;
         
-        if (currentPointIndex >= movementController.masterPositions.Count)
+        if (currentPointIndex >= routeController.masterPositions.Count)
         {
             TempRemoveUnit();
             return;
         }
         else
         {
-            moveToPoint = movementController.masterPositions[currentPointIndex].position;
+            moveToPoint = routeController.masterPositions[currentPointIndex].position;
             offsetToPoint = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
         }
     }
