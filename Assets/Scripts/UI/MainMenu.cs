@@ -16,7 +16,8 @@ public class MainMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		
+        prevMenuSelection = 0;
+
 	}
 	
 	// Update is called once per frame
@@ -44,6 +45,7 @@ public class MainMenu : MonoBehaviour {
     {
         if (menuSelection == menuButtons.Count ) { menuSelection = 0; }
         else if(menuSelection < 0) { menuSelection = menuButtons.Count - 1; }
+        if (prevMenuSelection >= menuButtons.Count) { prevMenuSelection = 0; }
 
         menuButtons[prevMenuSelection].GetComponent<Image>().color = Color.white;
         menuButtons[menuSelection].GetComponent<Image>().color = Color.gray;
