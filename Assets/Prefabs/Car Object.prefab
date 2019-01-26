@@ -311,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 1300459659303002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.25, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4236359738117840}
   m_Father: {fileID: 0}
@@ -657,7 +657,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300459659303002}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -705,5 +705,7 @@ MonoBehaviour:
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
   currentPointIndex: 0
+  maxSpeed: 6
+  acceleration: 200
   distanceFromPointCheck: 5
   canMove: 1

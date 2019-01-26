@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretAOEController : MonoBehaviour
+public class TurretAOEController : Tower
 {
     public ParticleSystem psFreeze;
-
-    public float searchRadius = 10;
-    
-    [SerializeField]
-    private List<GameObject> enemies = new List<GameObject>();
-
-    public float timeBetweenShots = 1;
-    private float timeElapsed = 0;
 
     private void FixedUpdate()
     {
@@ -58,13 +50,18 @@ public class TurretAOEController : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
+
         if (other.tag == "Enemy")
         {
+            Debug.Log("Enemy");
+
             if (!enemies.Contains(other.gameObject))
+            {
                 enemies.Add(other.gameObject);
+            }
         }
     }
 

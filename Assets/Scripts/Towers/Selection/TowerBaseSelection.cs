@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerBaseSelection : MonoBehaviour {
+public class TowerBaseSelection : MonoBehaviour
+{
 
     private GameObject UISelectionObject;
     private List<TowerPlace> towerSelections = new List<TowerPlace>();
@@ -27,6 +28,7 @@ public class TowerBaseSelection : MonoBehaviour {
         }
 	}
 
+
     void selectTower()
     {
         // Generate a raycast
@@ -47,6 +49,8 @@ public class TowerBaseSelection : MonoBehaviour {
             }
         }
     }
+
+
 
     public void DeSelected()
     {

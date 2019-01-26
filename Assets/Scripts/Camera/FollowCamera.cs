@@ -18,9 +18,9 @@ public class FollowCamera : MonoBehaviour
         float camZoom = cam.orthographicSize;
         if (scrollToZoom)
         {
-            camZoom += Input.GetAxis("Mouse ScrollWheel") * 5;
+            camZoom -= Input.GetAxis("Mouse ScrollWheel") * 5;
             Debug.Log("cam zoom " + camZoom);
-            cam.orthographicSize = Mathf.Clamp(camZoom, 3, 15);
+            cam.orthographicSize = Mathf.Clamp(camZoom, 3, 30);
         }
 
         if (Vector3.Distance(transform.position, objToFollow.position) > 0.1f)
@@ -43,7 +43,7 @@ public class FollowCamera : MonoBehaviour
                 }
             }
             
-            cam.orthographicSize = Mathf.Clamp(camZoom, 3, 15);
+            cam.orthographicSize = Mathf.Clamp(camZoom, 3, 30);
         }
         else
         {
