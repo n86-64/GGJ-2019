@@ -488,7 +488,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1333584229}
   - component: {fileID: 1333584228}
-  - component: {fileID: 1333584230}
   m_Layer: 0
   m_Name: MasterPositionsObject
   m_TagString: Untagged
@@ -509,6 +508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterPositions:
   - {fileID: 154673452}
+  - {fileID: 1996968940}
+  - {fileID: 1608046219}
+  - {fileID: 905566229}
 --- !u!4 &1333584229
 Transform:
   m_ObjectHideFlags: 0
@@ -526,22 +528,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1333584230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1333584227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed82aa5ff4fcf5d44b58685ffd56210b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterPositions:
-  - {fileID: 154673452}
-  - {fileID: 1996968940}
-  - {fileID: 1608046219}
-  - {fileID: 905566229}
 --- !u!1 &1608046218
 GameObject:
   m_ObjectHideFlags: 0
