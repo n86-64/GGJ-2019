@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     // movement
     private Rigidbody rb;
     Vector3 velocity;
+    public GameObject playerObject;
 
     // stamina
     public float walkingSpeed = 10.0f;
@@ -74,5 +75,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.velocity = velocity;
+
+        if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
+        {
+            playerObject.transform.rotation = Quaternion.Slerp(playerObject.transform.rotation, Quaternion.LookRotation(rb.velocity.normalized), Time.deltaTime * rotationSpeed);
+        }
     }
 }
