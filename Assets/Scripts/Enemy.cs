@@ -1,10 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Enemy
+public enum EnemyType
 {
-    public int health;
-    public int damage;
-    public int moveSpeed;
+    RATS, BURGLARS, CLUBBERS
+}
+
+public class Enemy : MonoBehaviour
+{
+    [HideInInspector]
+    public EnemyType type;
+    [HideInInspector]
+    public Vector3 offsetPosition;
+
+    private int health = 10;
+    private int damage = 2;
+    private int moveSpeed = 20;
+
+    private int lifetime = 100;
+
+    private void Awake()
+    {
+        transform.position += offsetPosition;
+
+        switch (type)
+        {
+            case EnemyType.RATS:
+                health = 10;
+                damage = 2;
+                moveSpeed = 20;
+                break;
+            case EnemyType.BURGLARS:
+                health = 10;
+                damage = 2;
+                moveSpeed = 20;
+                break;
+            case EnemyType.CLUBBERS:
+                health = 10;
+                damage = 2;
+                moveSpeed = 20;
+                break;
+        }
+
+        StartCoroutine(DestroyAfterLifetime());
+    }
+
+    public int GetMoveSpeed()
+    {
+        return moveSpeed;
+    }
+
+    IEnumerator DestroyAfterLifetime()
+    {
+        yield return new WaitForSeconds(lifetime);
+        Destroy(gameObject);
+    }
 }

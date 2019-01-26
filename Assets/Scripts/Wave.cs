@@ -3,22 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public enum EnemyType
+[Serializable]
+public class EnemySpawn
 {
-    LANDLORD, YOUTHS
+    public EnemyType type;
+    public int count;
+    public int intervalUntilNext;
 }
 
 [Serializable]
 public class Wave
 {
-    public EnemyType enemyType;
-    public int numberToSpawn;
+    public EnemySpawn[] enemies;
 
     //May be determined by their speed
-    public int timeActive;
+    public int timeBeforeNextSpawn;
 
     //Multiplier on their stats
     public int strength;
 
-    public GameObject prefab;
+    //public GameObject prefab;
+
+    public int totalToSpawn
+    {
+        get
+        {
+            int total = 0;
+            for(int i = 0; i < enemies.Length; i ++)
+            {
+                total += enemies[i].count;
+            }
+            return total;
+        }
+    }
 }
