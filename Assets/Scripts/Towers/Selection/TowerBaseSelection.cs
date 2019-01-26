@@ -9,6 +9,8 @@ public class TowerBaseSelection : MonoBehaviour
     private List<TowerPlace> towerSelections = new List<TowerPlace>();
     private int selectedTowerBase = -1;
 
+    private bool exitSelection = false;
+
     RaycastHit hitObjects;
 
 	// Use this for initialization
@@ -47,10 +49,24 @@ public class TowerBaseSelection : MonoBehaviour
                 UISelectionObject.GetComponent<RectTransform>().anchoredPosition = screenPoint;
                 UISelectionObject.SetActive(true);
             }
+            else
+            {
+                selectedTowerBase = -1;
+                UISelectionObject.SetActive(false);
+            }
         }
+
     }
 
+    public TowerPlace getSelectedTowerPlace()
+    {
+        if(selectedTowerBase >= 0)
+        {
+            return towerSelections[selectedTowerBase];
+        }
 
+        return null;
+    }
 
     public void DeSelected()
     {

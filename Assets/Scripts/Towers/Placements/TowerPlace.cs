@@ -5,7 +5,7 @@ using UnityEngine;
 public class TowerPlace : MonoBehaviour
 {
     public GameObject spawnPos;
-    public Tower currentSelectedTower;
+    private Tower currentSelectedTower;
 
     // Place a tower.
     public void placeTower(Tower newTower)
@@ -22,6 +22,4 @@ public class TowerPlace : MonoBehaviour
         // TODO - Destroy the tower. 
         currentSelectedTower = null;
     }
-
-
 }
