@@ -43,6 +43,11 @@ public class Objective : MonoBehaviour {
         }
     }
 
+    public void addMoney(float amount)
+    {
+        money += amount;
+    }
+
     public void TakeDamage(float damage)
     {
         // Here we will take damage. 
