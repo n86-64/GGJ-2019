@@ -589,8 +589,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5f47fbc039e7d439afcf900e240fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ratPrefab: {fileID: 0}
+  burglarPrefab: {fileID: 0}
+  clubberPrefab: {fileID: 0}
+  positionOffset: {x: 0, y: 0}
   waves: []
   currentWave: 0
+  activeUnits: []
 --- !u!4 &698463698
 Transform:
   m_ObjectHideFlags: 0
@@ -1404,7 +1409,7 @@ Prefab:
     - target: {fileID: 224744092140334376, guid: b2afb18817e2f584183f9317907ed205,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 224744092140334376, guid: b2afb18817e2f584183f9317907ed205,
         type: 2}
@@ -1424,7 +1429,7 @@ Prefab:
     - target: {fileID: 224744092140334376, guid: b2afb18817e2f584183f9317907ed205,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224744092140334376, guid: b2afb18817e2f584183f9317907ed205,
         type: 2}
@@ -1434,7 +1439,7 @@ Prefab:
     - target: {fileID: 224744092140334376, guid: b2afb18817e2f584183f9317907ed205,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224744092140334376, guid: b2afb18817e2f584183f9317907ed205,
         type: 2}
@@ -1445,10 +1450,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1565373373211510, guid: b2afb18817e2f584183f9317907ed205, type: 2}
-      propertyPath: m_TagString
-      value: Upgrade
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2afb18817e2f584183f9317907ed205, type: 2}
