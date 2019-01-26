@@ -4,31 +4,84 @@ using UnityEngine;
 
 public class WaveController : MonoBehaviour
 {
+    public static WaveController instance;
+
+    public GameObject ratPrefab;
+    public GameObject burglarPrefab;
+    public GameObject clubberPrefab;
+
+    public Vector2 positionOffset;
+
     public Wave[] waves;
 
     [HideInInspector]
     public int currentWave = 0;
 
+    [HideInInspector]
+    public List<GameObject> activeUnits = new List<GameObject>();
 
-    public void SpawnNextWave()
+    private void Start()
     {
-        ActivateWaveUI();
+        if (instance == null)
+            instance = this;
 
-        currentWave++;
+        StartCoroutine(SpawnNextWave());
+    }
+
+    public IEnumerator SpawnNextWave()
+    {
         Wave newWave = waves[currentWave];
 
-        for(int i = 0; i < newWave.numberToSpawn; i++)
+        foreach (EnemySpawn group in newWave.enemies)
         {
-            GameObject unit = Instantiate(newWave.prefab);
-            //instantiate as an enemy type
-            //add behaviour to it based on type
-            //new list of units?
+            for (int i = 0; i < group.count; i++)
+            {
+                GameObject unit = Instantiate(GetPrefab(group.type));
+                float randX = (float)(Random.Range(positionOffset.x * 10, positionOffset.y * 10) / 10);
+                float randZ = (float)(Random.Range(positionOffset.x * 10, positionOffset.y * 10) / 10);
+                unit.GetComponent<Enemy>().offsetPosition = new Vector3(randX, unit.transform.position.y, randZ);
+                unit.GetComponent<Enemy>().type = group.type;
+                unit.SetActive(true);
+                activeUnits.Add(unit);
+
+                yield return new WaitForEndOfFrame();
+            }
+            yield return new WaitForSeconds(group.intervalUntilNext);
+        }
+
+        if (waves.Length > currentWave)
+        {
+            StartCoroutine(WaitForNewWave(newWave.timeBeforeNextSpawn));
+            currentWave++;
+        }
+        else
+        {
+            Debug.Log("Waves complete");
         }
     }
 
-    private void ActivateWaveUI()
+    public GameObject GetPrefab(EnemyType t)
     {
-
+        switch (t)
+        {
+            case EnemyType.RATS:
+                return ratPrefab;
+            case EnemyType.BURGLARS:
+                return burglarPrefab;
+            case EnemyType.CLUBBERS:
+                return clubberPrefab;
+            default:
+                return null;
+        }
     }
-	
+
+    IEnumerator WaitForNewWave(int t)
+    {
+        while (activeUnits.Count > 0)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(t);
+        StartCoroutine(SpawnNextWave());
+    }
 }

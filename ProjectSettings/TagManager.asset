@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Weapon
+  - MasterPositions
   layers:
   - Default
   - TransparentFX
