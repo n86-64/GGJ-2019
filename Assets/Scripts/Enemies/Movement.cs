@@ -54,8 +54,9 @@ public class Movement : MonoBehaviour
         Vector3 lookAtGoal = new Vector3(moveToPoint.x, transform.position.y, moveToPoint.z);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(directionToPoint), Time.deltaTime * rotationSpeed);
 
-        
+
     }
+
 
     void Move()
     {
@@ -63,8 +64,8 @@ public class Movement : MonoBehaviour
         {
             directionToPoint = (moveToPoint + offsetToPoint) - transform.position;
 
-           
-            rb.AddRelativeForce(new Vector3(0,0,tempSpeed));
+
+            rb.AddRelativeForce(new Vector3(0, 0, tempSpeed));
             Vector3.ClampMagnitude(rb.velocity, 10);
 
             //transform.Translate(transform.forward * tempSpeed * Time.deltaTime, Space.World);
