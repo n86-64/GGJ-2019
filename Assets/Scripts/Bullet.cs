@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public Transform target;
     public Vector3 origin;
     public float bulletSpeed = 0.5f;
-    
+
 
     private void OnEnable()
     {
@@ -27,3 +27,4 @@ public class Bullet : MonoBehaviour
         transform.position += direction * Time.deltaTime * bulletSpeed;
     }
 }
+
