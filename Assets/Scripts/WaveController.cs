@@ -43,7 +43,7 @@ public class WaveController : MonoBehaviour
                 unit.GetComponent<Enemy>().offsetPosition = new Vector3(randX, unit.transform.position.y, randZ);
                 unit.GetComponent<Enemy>().type = group.type;
                 unit.GetComponent<Movement>().routeController = group.route;
-                unit.transform.localScale *= 0.4f;
+                //unit.transform.localScale *= 0.4f;
                 unit.SetActive(true);
                 activeUnits.Add(unit);
 
