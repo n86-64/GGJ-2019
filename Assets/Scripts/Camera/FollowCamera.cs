@@ -8,7 +8,7 @@ public class FollowCamera : MonoBehaviour
     public Transform objToFollow;
     public float speed = 1;
 
-    private float distance = 3;
+    public float zoomSpeed = 1;
     private Vector3 startPos;
 
     private void LateUpdate()
@@ -18,6 +18,17 @@ public class FollowCamera : MonoBehaviour
             transform.position = Vector3.Lerp(
                 transform.position, objToFollow.position,
                 Time.deltaTime * speed);
+
+            if (Vector3.Distance(startPos, transform.position) <
+                Vector3.Distance(transform.position, objToFollow.position))
+            {
+                cam.orthographicSize += Time.deltaTime * zoomSpeed;
+            }
+            else
+            {
+                cam.orthographicSize -= Time.deltaTime * zoomSpeed;
+            }
+            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 3, 5);
 
             //float t = Mathf.InverseLerp(
             //    startPos.magnitude, objToFollow.position.magnitude,
