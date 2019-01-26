@@ -9,6 +9,7 @@ public class EnemySpawn
     public EnemyType type;
     public int count;
     public int intervalUntilNext;
+    public MovementController route;
 }
 
 [Serializable]

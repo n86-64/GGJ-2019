@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public EnemyType type;
     [HideInInspector]
+    public Vector3 origin;
+    [HideInInspector]
     public Vector3 offsetPosition;
 
     private int health = 10;
@@ -21,24 +23,24 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        transform.position += offsetPosition;
+        transform.position = origin + offsetPosition;
 
         switch (type)
         {
             case EnemyType.RATS:
                 health = 10;
                 damage = 2;
-                moveSpeed = 20;
+                moveSpeed = 15;
                 break;
             case EnemyType.BURGLARS:
                 health = 10;
                 damage = 2;
-                moveSpeed = 20;
+                moveSpeed = 15;
                 break;
             case EnemyType.CLUBBERS:
                 health = 10;
                 damage = 2;
-                moveSpeed = 20;
+                moveSpeed = 15;
                 break;
         }
 
