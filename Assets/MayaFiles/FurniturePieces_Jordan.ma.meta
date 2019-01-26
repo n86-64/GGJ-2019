@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: 60caaf2c764a83447ac23053a91eb7c6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BedObject
+    100002: ChairObject
+    100004: DinnerTableObject
+    100006: Duvet
+    100008: Frame
+    100010: Frame 1
+    100012: //RootNode
+    100014: L_Pillow
+    100016: Mattress
+    100018: pCube1
+    100020: pCube2
+    100022: pSphere1
+    100024: R_Pillow
+    100026: Seat
+    100028: Table
+    100030: Base
+    100032: Base 1
+    100034: Basin
+    100036: Body
+    100038: ChestODraws
+    100040: ChestODraws1
+    100042: ChestODraws2
+    100044: CupboardObject
+    100046: Door
+    100048: FaucetEnd
+    100050: Handle
+    100052: Handle1
+    100054: Handle2
+    100056: Handle3
+    100058: Handle4
+    100060: Handle5
+    100062: Handle6
+    100064: LeftHandle
+    100066: Lid
+    100068: RightHandle
+    100070: Seat 1
+    100072: ShowerObject
+    100074: ShowerPipe
+    100076: Sink
+    100078: Toilet
+    100080: Wardrobe
+    100082: WaterHolder
+    400000: BedObject
+    400002: ChairObject
+    400004: DinnerTableObject
+    400006: Duvet
+    400008: Frame
+    400010: Frame 1
+    400012: //RootNode
+    400014: L_Pillow
+    400016: Mattress
+    400018: pCube1
+    400020: pCube2
+    400022: pSphere1
+    400024: R_Pillow
+    400026: Seat
+    400028: Table
+    400030: Base
+    400032: Base 1
+    400034: Basin
+    400036: Body
+    400038: ChestODraws
+    400040: ChestODraws1
+    400042: ChestODraws2
+    400044: CupboardObject
+    400046: Door
+    400048: FaucetEnd
+    400050: Handle
+    400052: Handle1
+    400054: Handle2
+    400056: Handle3
+    400058: Handle4
+    400060: Handle5
+    400062: Handle6
+    400064: LeftHandle
+    400066: Lid
+    400068: RightHandle
+    400070: Seat 1
+    400072: ShowerObject
+    400074: ShowerPipe
+    400076: Sink
+    400078: Toilet
+    400080: Wardrobe
+    400082: WaterHolder
+    2100000: lmb_Chair_Seat
+    2100002: lmb_Chair_Frame
+    2100004: lmb_Table
+    2100006: lmb_Bed_Frame
+    2100008: lmb_Bed_Mattress
+    2100010: lmb_Bed_Duvet
+    2100012: lmb_Bed_Pillow
+    2100014: lambert1
+    2300000: Duvet
+    2300002: Frame
+    2300004: Frame 1
+    2300006: L_Pillow
+    2300008: Mattress
+    2300010: pCube1
+    2300012: pCube2
+    2300014: pSphere1
+    2300016: R_Pillow
+    2300018: Seat
+    2300020: Table
+    2300022: Base
+    2300024: Base 1
+    2300026: Basin
+    2300028: Body
+    2300030: ChestODraws
+    2300032: ChestODraws1
+    2300034: ChestODraws2
+    2300036: Door
+    2300038: FaucetEnd
+    2300040: Handle
+    2300042: Handle1
+    2300044: Handle2
+    2300046: Handle3
+    2300048: Handle4
+    2300050: Handle5
+    2300052: Handle6
+    2300054: LeftHandle
+    2300056: Lid
+    2300058: RightHandle
+    2300060: Seat 1
+    2300062: ShowerPipe
+    2300064: WaterHolder
+    3300000: Duvet
+    3300002: Frame
+    3300004: Frame 1
+    3300006: L_Pillow
+    3300008: Mattress
+    3300010: pCube1
+    3300012: pCube2
+    3300014: pSphere1
+    3300016: R_Pillow
+    3300018: Seat
+    3300020: Table
+    3300022: Base
+    3300024: Base 1
+    3300026: Basin
+    3300028: Body
+    3300030: ChestODraws
+    3300032: ChestODraws1
+    3300034: ChestODraws2
+    3300036: Door
+    3300038: FaucetEnd
+    3300040: Handle
+    3300042: Handle1
+    3300044: Handle2
+    3300046: Handle3
+    3300048: Handle4
+    3300050: Handle5
+    3300052: Handle6
+    3300054: LeftHandle
+    3300056: Lid
+    3300058: RightHandle
+    3300060: Seat 1
+    3300062: ShowerPipe
+    3300064: WaterHolder
+    4300000: Seat
+    4300002: Frame
+    4300004: Table
+    4300006: Frame
+    4300008: Mattress
+    4300010: Duvet
+    4300012: L_Pillow
+    4300014: R_Pillow
+    4300016: pCube1
+    4300018: pCube2
+    4300020: pSphere1
+    4300022: Base
+    4300024: Door
+    4300026: Handle1
+    4300028: Base
+    4300030: ChestODraws
+    4300032: Handle
+    4300034: Handle2
+    4300036: ChestODraws1
+    4300038: Handle3
+    4300040: Handle4
+    4300042: ChestODraws2
+    4300044: Handle5
+    4300046: Handle6
+    4300048: Body
+    4300050: ShowerPipe
+    4300052: FaucetEnd
+    4300054: Seat
+    4300056: Lid
+    4300058: WaterHolder
+    4300060: Basin
+    4300062: LeftHandle
+    4300064: RightHandle
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
