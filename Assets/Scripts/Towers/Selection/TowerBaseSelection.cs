@@ -27,6 +27,7 @@ public class TowerBaseSelection : MonoBehaviour {
         }
 	}
 
+
     void selectTower()
     {
         // Generate a raycast
@@ -47,6 +48,8 @@ public class TowerBaseSelection : MonoBehaviour {
             }
         }
     }
+
+
 
     public void DeSelected()
     {

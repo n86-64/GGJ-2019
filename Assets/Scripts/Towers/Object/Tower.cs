@@ -2,10 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : MonoBehaviour {
+public class Tower : MonoBehaviour
+{
+    // Properties.
+    public float searchRadius = 10;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private List<GameObject> enemies = new List<GameObject>();
+
+    public float timeBetweenShots = 1;
+    private float timeElapsed = 0;
+
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
