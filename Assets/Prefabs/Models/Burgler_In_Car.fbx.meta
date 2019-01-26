@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: a5b7450db17d5a34b9a166a7ea9a726f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BigBag
+    100002: BigBagRope
+    100004: BigBagTop
+    100006: Bumper
+    100008: Burgler
+    100010: //RootNode
+    100012: Car
+    100014: SmallBag
+    100016: SmallBagRope
+    100018: SmallBagTop
+    100020: SteringWhele
+    100022: Tyre1
+    100024: Tyre2
+    100026: Tyre3
+    100028: Tyre4
+    400000: BigBag
+    400002: BigBagRope
+    400004: BigBagTop
+    400006: Bumper
+    400008: Burgler
+    400010: //RootNode
+    400012: Car
+    400014: SmallBag
+    400016: SmallBagRope
+    400018: SmallBagTop
+    400020: SteringWhele
+    400022: Tyre1
+    400024: Tyre2
+    400026: Tyre3
+    400028: Tyre4
+    2100000: lambert3
+    2100002: lambert4
+    2100004: lambert7
+    2100006: lambert5
+    2100008: lambert2
+    2100010: lambert6
+    2100012: lambert17
+    2100014: human_maybe_human_maybe_blinn
+    2100016: lambert20
+    2100018: lambert16
+    2100020: lambert14
+    2100022: lambert13
+    2100024: lambert19
+    2100026: lambert21
+    2100028: lambert11
+    2100030: lambert10
+    2300000: BigBag
+    2300002: BigBagRope
+    2300004: BigBagTop
+    2300006: Bumper
+    2300008: Burgler
+    2300010: Car
+    2300012: SmallBag
+    2300014: SmallBagRope
+    2300016: SmallBagTop
+    2300018: SteringWhele
+    2300020: Tyre1
+    2300022: Tyre2
+    2300024: Tyre3
+    2300026: Tyre4
+    3300000: BigBag
+    3300002: BigBagRope
+    3300004: BigBagTop
+    3300006: Bumper
+    3300008: Burgler
+    3300010: Car
+    3300012: SmallBag
+    3300014: SmallBagRope
+    3300016: SmallBagTop
+    3300018: SteringWhele
+    3300020: Tyre1
+    3300022: Tyre2
+    3300024: Tyre3
+    3300026: Tyre4
+    4300000: Car
+    4300002: BigBagRope
+    4300004: Burgler
+    4300006: SmallBag
+    4300008: SmallBagRope
+    4300010: BigBag
+    4300012: SmallBagTop
+    4300014: Tyre1
+    4300016: Tyre2
+    4300018: BigBagTop
+    4300020: Tyre3
+    4300022: Tyre4
+    4300024: SteringWhele
+    4300026: Bumper
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
