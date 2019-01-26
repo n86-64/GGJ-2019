@@ -2,10 +2,11 @@
 using System.Collections;
 
 //Place this on any object to make it move across the level as an enemy
-public class PathMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public MovementController movementController;
 
+    public Rigidbody rb;
 
     public Vector3 moveToPoint;
     public Vector3 offsetToPoint;
@@ -43,7 +44,7 @@ public class PathMovement : MonoBehaviour
         else
         {
             moveToPoint = movementController.masterPositions[currentPointIndex].position;
-            Vector3 offsetPoint = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+            offsetToPoint = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
 
         }
     }
@@ -52,6 +53,8 @@ public class PathMovement : MonoBehaviour
     {
         Vector3 lookAtGoal = new Vector3(moveToPoint.x, transform.position.y, moveToPoint.z);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(directionToPoint), Time.deltaTime * rotationSpeed);
+
+        
     }
 
     void Move()
@@ -59,7 +62,12 @@ public class PathMovement : MonoBehaviour
         if (canMove)
         {
             directionToPoint = (moveToPoint + offsetToPoint) - transform.position;
-            transform.Translate(transform.forward * tempSpeed * Time.deltaTime, Space.World);
+
+           
+            rb.AddRelativeForce(new Vector3(0,0,tempSpeed));
+            Vector3.ClampMagnitude(rb.velocity, 10);
+
+            //transform.Translate(transform.forward * tempSpeed * Time.deltaTime, Space.World);
             RotateTowardsPoint();
 
             if (Vector3.Distance(transform.position, moveToPoint) <= distanceFromPointCheck)
