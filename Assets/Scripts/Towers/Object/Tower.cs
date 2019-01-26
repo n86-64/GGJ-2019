@@ -6,22 +6,9 @@ public class Tower : MonoBehaviour
 {
     // Properties.
     public float searchRadius = 10;
+    public float timeBetweenShots = 1;
 
     [SerializeField]
-    private List<GameObject> enemies = new List<GameObject>();
-
-    public float timeBetweenShots = 1;
-    private float timeElapsed = 0;
-
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    protected List<GameObject> enemies = new List<GameObject>();
+    protected float timeElapsed = 0;
 }
