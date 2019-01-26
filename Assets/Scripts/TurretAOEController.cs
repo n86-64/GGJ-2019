@@ -2,37 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretController : MonoBehaviour
+public class TurretAOEController : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    private List<GameObject> bullets;
-    private int amountToPool = 20;
+    public ParticleSystem psFreeze;
 
     public float searchRadius = 10;
-    public LayerMask enemyLayer;
     
     [SerializeField]
     private List<GameObject> enemies = new List<GameObject>();
 
-    public float rateOfFire = 1;
+    public float timeBetweenShots = 1;
     private float timeElapsed = 0;
-
-    private void Start()
-    {
-        bullets = new List<GameObject>();
-        for (int i = 0; i < amountToPool; i++)
-        {
-            GameObject obj = Instantiate(bulletPrefab, transform);
-            obj.SetActive(false);
-            bullets.Add(obj);
-        }
-    }
 
     private void FixedUpdate()
     {
         if (enemies.Count == 0)
+        {
             return;
-
+        }
+        
         float previousDistance = 100;
         GameObject closestEnemy = null;
         foreach (GameObject enemy in enemies)
@@ -46,25 +34,27 @@ public class TurretController : MonoBehaviour
 
         if (closestEnemy != null)
         {
-            transform.parent.LookAt(closestEnemy.transform.position);
-            Fire(closestEnemy);
+            transform.parent.LookAt(new Vector3(closestEnemy.transform.position.x, transform.position.y, closestEnemy.transform.position.z));
+            Fire();
         }
     }
 
-    private void Fire(GameObject enemy)
+    private void Fire()
     {
-        if (timeElapsed > rateOfFire)
+        if (timeElapsed > timeBetweenShots)
         {
-            Bullet bullet = GetBullet().GetComponent<Bullet>();
-            bullet.origin = transform.position;
-            bullet.target = enemy.transform;
-            bullet.gameObject.SetActive(true);
+            psFreeze.Play();
 
             timeElapsed = 0;
         }
         else
         {
             timeElapsed += Time.deltaTime;
+        }
+
+        foreach (GameObject enemy in enemies)
+        {
+            // enemy.TakeDamage(damage);
         }
     }
 
@@ -84,17 +74,5 @@ public class TurretController : MonoBehaviour
         {
             enemies.Remove(other.gameObject);
         }
-    }
-
-    private GameObject GetBullet()
-    {
-        for (int i = 0; i < bullets.Count; i++)
-        {
-            if (!bullets[i].activeInHierarchy)
-            {
-                return bullets[i];
-            }
-        }  
-        return null;
     }
 }
