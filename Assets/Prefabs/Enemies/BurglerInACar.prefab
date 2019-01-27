@@ -1347,7 +1347,7 @@ MonoBehaviour:
   health: 200
   damage: 2
   moveSpeed: 20
-  lifetime: 100
+  lifetime: 80
   ticksTilDamaged: 100
 --- !u!198 &198058596968964492
 ParticleSystem:

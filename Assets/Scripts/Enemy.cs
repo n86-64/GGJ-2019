@@ -25,6 +25,10 @@ public class Enemy : MonoBehaviour
 
     private int damageTicks = 0;
 
+    private Vector3 checkPos;
+    private float timeStill;
+    private float timeMoving;
+
     private void Awake()
     {
         transform.position = origin + offsetPosition;
@@ -61,6 +65,24 @@ public class Enemy : MonoBehaviour
         if (Input.GetKey("m"))
         {
             BlowUpCar();
+        }
+
+        if (Vector3.Distance(transform.position, checkPos) < 1)
+        {
+            timeStill += Time.deltaTime;
+            if (timeStill > 10)
+            {
+                health = 0;
+            }
+        }
+        else
+        {
+            timeMoving += Time.deltaTime;
+            if (timeMoving > 1)
+            {
+                checkPos = transform.position;
+                timeMoving = 0;
+            }
         }
     }
 
