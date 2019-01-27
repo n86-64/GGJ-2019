@@ -43,7 +43,7 @@ public class TowerBaseSelection : MonoBehaviour
         // Generate a raycast
         Vector3 screenPoint = Camera.main.ScreenToViewportPoint(Input.mousePosition) * new Vector2(1920.0f, 1080.0f);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out hitObjects, 1000.0f);
+        Physics.Raycast(ray, out hitObjects, Mathf.Infinity);
 
         if (hitObjects.collider)
         {

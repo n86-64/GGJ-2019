@@ -35,8 +35,8 @@ public class UIGameState : MonoBehaviour
             if(money < quota) { quotaUI.GetComponent<Text>().color = Color.red; }
             else { quotaUI.GetComponent<Text>().color = Color.green;  }
 
-            quotaUI.GetComponent<Text>().text = "REQUIRED: $" + Math.Round(levelObjective.getQuota(), 2);
-            quotaBarUI.GetComponent<UIHealthBar>().setMultiplier(levelObjective.getMoney() / levelObjective.getQuota());
+            quotaUI.GetComponent<Text>().text = "REQUIRED: $" + Math.Round(quota, 2);
+            quotaBarUI.GetComponent<UIHealthBar>().setMultiplier(levelObjective.getMoney() / quota);
         }
     }
 
