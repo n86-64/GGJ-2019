@@ -194,6 +194,7 @@ ModelImporter:
     4300060: Basin
     4300062: LeftHandle
     4300064: RightHandle
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -266,6 +267,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
