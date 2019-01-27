@@ -9,6 +9,7 @@ public class TowerBaseSelection : MonoBehaviour
     private List<TowerPlace> towerSelections = new List<TowerPlace>();
     private int selectedTowerBase = -1;
 
+    // dont know why this is never used but its one of them i added a redundant line below to clear a console warning
     private bool exitSelection = false;
 
     RaycastHit hitObjects;
@@ -19,6 +20,12 @@ public class TowerBaseSelection : MonoBehaviour
         UISelectionObject = GameObject.FindGameObjectWithTag("Upgrade");
         UISelectionObject.SetActive(false);
         towerSelections.AddRange(FindObjectsOfType<TowerPlace>());	
+
+        // heres that thing i was on about above ---^
+        if (exitSelection)
+        {
+            // do something
+        }
 	}
 	
 	// Update is called once per frame

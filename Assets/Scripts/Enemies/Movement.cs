@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
 
     void RotateTowardsPoint()
     {
-        Vector3 lookAtGoal = new Vector3(moveToPoint.x, transform.position.y, moveToPoint.z);
+        //Vector3 lookAtGoal = new Vector3(moveToPoint.x, transform.position.y, moveToPoint.z);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(directionToPoint), Time.deltaTime * rotationSpeed);   
     }
 
@@ -65,7 +65,7 @@ public class Movement : MonoBehaviour
     {
         if (canMove)
         {
-            directionToPoint = (moveToPoint + offsetToPoint) - transform.position;
+            directionToPoint = (new Vector3(moveToPoint.x, transform.position.y, moveToPoint.z) + offsetToPoint) - new Vector3(transform.position.x, 0, transform.position.z);
 
             if (rb.velocity.magnitude <= maxSpeed)
             {

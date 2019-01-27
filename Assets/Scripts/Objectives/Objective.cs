@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Objective : MonoBehaviour {
-
+public class Objective : MonoBehaviour
+{
     [SerializeField]
     private float money = 100.0f;
     private float rent = 0.0f;
@@ -33,6 +33,21 @@ public class Objective : MonoBehaviour {
     {
         if (money <= rent || Input.GetKeyDown(KeyCode.K))
         {
+            // might have lives here
+
+            // would have to set it somewhere else, here is fine to clear a console warning
+            lives = 1;
+            
+            // remove a life for not paying rent
+            if (lives > 1)
+            {
+                lives--;
+            }
+            else
+            {
+                // add the lines below up here, duh
+            }
+
             // Im Dead end the game.
             Debug.Log("Oh No Were bankrupt.");
             gameOverMenu.SetActive(true);

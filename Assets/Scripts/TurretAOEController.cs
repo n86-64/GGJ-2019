@@ -17,10 +17,13 @@ public class TurretAOEController : Tower
         GameObject closestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
-            if (Vector3.Distance(transform.position, enemy.transform.position) < previousDistance)
+            if (enemy)
             {
-                previousDistance = Vector3.Distance(transform.position, enemy.transform.position);
-                closestEnemy = enemy;
+                if (Vector3.Distance(transform.position, enemy.transform.position) < previousDistance)
+                {
+                    previousDistance = Vector3.Distance(transform.position, enemy.transform.position);
+                    closestEnemy = enemy;
+                }
             }
         }
 
@@ -52,7 +55,7 @@ public class TurretAOEController : Tower
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
+        //Debug.Log(other.tag);
 
         if (other.tag == "Enemy")
         {

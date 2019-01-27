@@ -10,9 +10,6 @@ public class TurretController : Tower
     private List<GameObject> bullets;
     private int amountToPool = 20;
 
-    public ParticleSystem psBarrelSmoke;
-    public ParticleSystem psBarrelSparks;
-
     private void Start()
     {
         bullets = new List<GameObject>();
@@ -62,9 +59,6 @@ public class TurretController : Tower
             bullet.origin = bulletSpawnPosition.position;
             bullet.target = enemy.transform;
             bullet.gameObject.SetActive(true);
-
-            psBarrelSmoke.Play();
-            psBarrelSparks.Play();
 
             timeElapsed = 0;
         }
