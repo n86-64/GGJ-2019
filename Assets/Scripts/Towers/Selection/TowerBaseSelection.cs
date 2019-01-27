@@ -56,11 +56,11 @@ public class TowerBaseSelection : MonoBehaviour
                 UISelectionObject.GetComponent<RectTransform>().anchoredPosition = screenPoint;
                 UISelectionObject.SetActive(true);
             }
-            else
-            {
-                selectedTowerBase = -1;
-                UISelectionObject.SetActive(false);
-            }
+            //else
+            //{
+            //    selectedTowerBase = -1;
+            //    UISelectionObject.SetActive(false);
+            //}
         }
 
     }
