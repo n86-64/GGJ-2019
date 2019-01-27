@@ -9,10 +9,10 @@ public class UIGameState : MonoBehaviour
     private ObjectiveData levelObjective;
 
     // properties
-    public GameObject quotaCount;
-    public GameObject quotaBar;
-    public GameObject moneyCount;
-    public GameObject waveCount;
+    public GameObject quotaUI;
+    public GameObject quotaBarUI;
+    public GameObject moneyUI;
+    public GameObject waveUI;
 
     void Start()
     {
@@ -30,8 +30,13 @@ public class UIGameState : MonoBehaviour
     {
         if (levelObjective)
         {
-            quotaCount.GetComponent<Text>().text = "QUOTA $" + Math.Round(levelObjective.getQuota(), 2);
-            quotaBar.GetComponent<UIHealthBar>().setMultiplier(levelObjective.getMoney() / levelObjective.getQuota());
+            float money = levelObjective.getMoney(); 
+            float quota = levelObjective.getQuota();
+            if(money < quota) { quotaUI.GetComponent<Text>().color = Color.red; }
+            else { quotaUI.GetComponent<Text>().color = Color.green;  }
+
+            quotaUI.GetComponent<Text>().text = "REQUIRED: $" + Math.Round(levelObjective.getQuota(), 2);
+            quotaBarUI.GetComponent<UIHealthBar>().setMultiplier(levelObjective.getMoney() / levelObjective.getQuota());
         }
     }
 
@@ -39,7 +44,7 @@ public class UIGameState : MonoBehaviour
     {
         if (levelObjective)
         {
-            moneyCount.GetComponent<Text>().text = "$" + Math.Round(levelObjective.getMoney(), 2);
+            moneyUI.GetComponent<Text>().text = "MONEY: $" + Math.Round(levelObjective.getMoney(), 2);
         }
     }
 
@@ -47,7 +52,7 @@ public class UIGameState : MonoBehaviour
     {
         if (WaveController.instance)
         {
-            waveCount.GetComponent<Text>().text = "WAVE\n" + (WaveController.instance.currentWave + 1) + " out of " + WaveController.instance.waves.Length;
+            waveUI.GetComponent<Text>().text = "WAVE\n" + (WaveController.instance.currentWave + 1) + " out of " + WaveController.instance.waves.Length;
         }
     }
 }

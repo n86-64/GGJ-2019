@@ -22,7 +22,7 @@ public class ObjectiveData : MonoBehaviour
     void Update()
     {
 #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKey(KeyCode.M))
         {
             money += 10.0f;
         }
