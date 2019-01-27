@@ -11,18 +11,16 @@ public class UIHealthBar : MonoBehaviour {
     public Image bar;
     public float barLength = 100.0f;
 
-	// Use this for initialization
-	void Start ()
+    private void Start()
     {
-
-	}
+        barLength = bar.rectTransform.rect.width;
+    }
 
     public void setMultiplier(float newMultiplier)
     {
         multiplier = newMultiplier;
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
         multiplier = Mathf.Clamp(multiplier, 0.0f, 1.0f);
