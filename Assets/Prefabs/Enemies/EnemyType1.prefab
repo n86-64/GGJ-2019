@@ -131,7 +131,7 @@ MonoBehaviour:
   health: 10
   damage: 2
   moveSpeed: 20
-  lifetime: 100
+  lifetime: 80
   ticksTilDamaged: 100
 --- !u!114 &114843652256226522
 MonoBehaviour:
@@ -153,3 +153,4 @@ MonoBehaviour:
   acceleration: 8
   distanceFromPointCheck: 5
   canMove: 1
+  dying: 0
