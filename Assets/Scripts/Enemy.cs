@@ -8,6 +8,10 @@ public enum EnemyType
 
 public class Enemy : MonoBehaviour
 {
+
+    public AudioSource fireSoundSource;
+    public AudioSource engineSoundSource;
+
     [HideInInspector]
     public EnemyType type;
     [HideInInspector]
@@ -106,6 +110,9 @@ public class Enemy : MonoBehaviour
     private void BlowUpCar()
     {
         // enable particle effects (and play)
+        AudioManager.instance.PlaySFX(fireSoundSource, AudioManager.instance.fireSound);
+        AudioManager.instance.StopSFX(engineSoundSource);
+       
         StartCoroutine(GetComponent<CarBlowUp>().Particles());
         StartCoroutine(GetComponent<CarBlowUp>().ShrinkCar());
 

@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
     private Enemy enemy;
 
+    public AudioSource engineSound;
+    public AudioSource engineFire;
+
     public Vector3 moveToPoint;
     public Vector3 offsetToPoint;
     public Vector3 directionToPoint;
@@ -24,12 +27,14 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.instance.PlaySFX(engineSound,AudioManager.instance.engineSound);
         //routeController = GameObject.FindGameObjectWithTag("MasterPositions").GetComponent<MovementController>();
         rb = GetComponent<Rigidbody>();
         enemy = GetComponent<Enemy>();
         rotationSpeed = enemy.GetMoveSpeed() / 2;
 
         moveToPoint = routeController.masterPositions[currentPointIndex].position;
+
     }
 
     void FixedUpdate()
