@@ -17,8 +17,9 @@ public class TowerPlace : MonoBehaviour
         }
     }
 
-    public void hasTower()
+    public bool hasTower()
     {
+        return currentSelectedTower != null;
     }
 
     void clearTower()

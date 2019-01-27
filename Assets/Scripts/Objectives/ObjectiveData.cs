@@ -26,6 +26,10 @@ public class ObjectiveData : MonoBehaviour
         {
             money += 10.0f;
         }
+        else if(Input.GetKey(KeyCode.N))
+        {
+            money -= 10.0f;
+        }
 #endif
 
 

@@ -48,17 +48,27 @@ public class TowerBaseSelection : MonoBehaviour
         if (hitObjects.collider)
         {
             // Hit an object. Select it.
-            if (selectedTowerBase == -1 &&
-                towerSelections.Contains(hitObjects.collider.gameObject.GetComponent<TowerPlace>()))
+            if (towerSelections.Contains(hitObjects.collider.gameObject.GetComponent<TowerPlace>()))
             {
                 selectedTowerBase = towerSelections.IndexOf(hitObjects.collider.gameObject.GetComponent<TowerPlace>());
-                Debug.Log("TowerSelected: " + towerSelections[selectedTowerBase].gameObject.name);
-                UISelectionObject.GetComponent<RectTransform>().anchoredPosition = screenPoint;
-                UISelectionObject.SetActive(true);
+
+                if (!towerSelections[selectedTowerBase].hasTower())
+                {
+                    Debug.Log("TowerSelected: " + towerSelections[selectedTowerBase].gameObject.name);
+                    UISelectionObject.GetComponent<RectTransform>().anchoredPosition = screenPoint;
+                    UISelectionObject.SetActive(true);
+                }
+                else
+                {
+                    selectedTowerBase = -1;
+                }
             }
             //else
             //{
-            //    selectedTowerBase = -1;
+            //    if(selectedTowerBase == -1)
+            //    {
+
+            //    }
             //    UISelectionObject.SetActive(false);
             //}
         }
