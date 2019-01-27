@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
     private float rotationSpeed; //The speed the unit rotates to head towards the point;
     public bool canMove;
 
+    public bool dying = false;
+
     private void Start()
     {
         //routeController = GameObject.FindGameObjectWithTag("MasterPositions").GetComponent<MovementController>();
@@ -69,7 +71,7 @@ public class Movement : MonoBehaviour
             directionToPoint = (new Vector3(moveToPoint.x, transform.position.y, moveToPoint.z) + offsetToPoint) - new Vector3(transform.position.x, 0, transform.position.z);
 
 
-            if (rb.velocity.magnitude <= maxSpeed)
+            if (rb.velocity.magnitude <= maxSpeed && !dying)
             {
                 rb.AddRelativeForce(new Vector3(0, 0, acceleration) - rb.velocity);
             }
