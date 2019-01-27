@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurretAOEController : Tower
 {
-    public ParticleSystem psFreeze;
+    //public ParticleSystem psStink;
 
     private void FixedUpdate()
     {
@@ -13,45 +13,47 @@ public class TurretAOEController : Tower
             return;
         }
         
-        float previousDistance = 100;
-        GameObject closestEnemy = null;
+        //float previousDistance = 100;
+        //GameObject closestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
             if (enemy)
             {
-                if (Vector3.Distance(transform.position, enemy.transform.position) < previousDistance)
-                {
-                    previousDistance = Vector3.Distance(transform.position, enemy.transform.position);
-                    closestEnemy = enemy;
-                }
+                enemy.GetComponent<Enemy>().GetMicroHit();
+
+                //if (Vector3.Distance(transform.position, enemy.transform.position) < previousDistance)
+                //{
+                //    previousDistance = Vector3.Distance(transform.position, enemy.transform.position);
+                //    closestEnemy = enemy;
+                //}
             }
         }
 
-        if (closestEnemy != null)
-        {
-            transform.parent.LookAt(new Vector3(closestEnemy.transform.position.x, transform.position.y, closestEnemy.transform.position.z));
-            Fire();
-        }
+        //if (closestEnemy != null)
+        //{
+        //    transform.parent.LookAt(new Vector3(closestEnemy.transform.position.x, transform.position.y, closestEnemy.transform.position.z));
+        //    Fire();
+        //}
     }
 
-    private void Fire()
-    {
-        if (timeElapsed > timeBetweenShots)
-        {
-            psFreeze.Play();
+    //private void Fire()
+    //{
+    //    if (timeElapsed > timeBetweenShots)
+    //    {
+    //        //psStink.Play();
 
-            timeElapsed = 0;
-        }
-        else
-        {
-            timeElapsed += Time.deltaTime;
-        }
+    //        timeElapsed = 0;
+    //    }
+    //    else
+    //    {
+    //        timeElapsed += Time.deltaTime;
+    //    }
 
-        foreach (GameObject enemy in enemies)
-        {
-            // enemy.TakeDamage(damage);
-        }
-    }
+    //    foreach (GameObject enemy in enemies)
+    //    {
+    //        // enemy.TakeDamage(damage);
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -59,7 +61,7 @@ public class TurretAOEController : Tower
 
         if (other.tag == "Enemy")
         {
-            Debug.Log("Enemy");
+            //Debug.Log("Enemy");
 
             if (!enemies.Contains(other.gameObject))
             {
