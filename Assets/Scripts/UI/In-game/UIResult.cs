@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIResult : MonoBehaviour {
-
-	// Use this for initialization
+public class UIResult : MonoBehaviour
+{
+    
 	void Awake ()
     {
-        WaveController waveController = FindObjectOfType<WaveController>();
-        if (waveController)
+        if (WaveController.instance)
         {
-            GetComponent<Text>().text = "You Lasted: " + (waveController.currentWave) + " waves.";
+            GetComponent<Text>().text = "YOU LASTED\n" + (WaveController.instance.currentWave) + " WAVES";
         }
     }
 	
