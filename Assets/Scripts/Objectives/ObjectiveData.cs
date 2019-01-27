@@ -57,6 +57,7 @@ public class ObjectiveData : MonoBehaviour
 
             // Im Dead end the game.
             Debug.Log("Oh No Were bankrupt.");
+            GameObject.FindGameObjectWithTag("Player").SetActive(false);
             gameOverMenu.SetActive(true);
         }
         else

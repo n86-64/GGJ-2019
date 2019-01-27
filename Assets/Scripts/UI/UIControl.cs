@@ -34,8 +34,10 @@ public class UIControl : MonoBehaviour {
 
     public void ResetGame()
     {
-        GameObject gameOverMenu = GameObject.FindGameObjectWithTag("GameOver");
-        gameOverMenu.SetActive(false);
-        // Run the reset logic for the menus.
+        //GameObject gameOverMenu = GameObject.FindGameObjectWithTag("GameOver");
+        //gameOverMenu.SetActive(false);
+        //// Run the reset logic for the menus.
+        ///
+        SceneManager.LoadScene("Level1 Copy");
     }
 }
