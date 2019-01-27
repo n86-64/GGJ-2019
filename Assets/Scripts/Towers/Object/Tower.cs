@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     // Properties.
+    public float cost = 50.0f;
     public float searchRadius = 10;
     public float timeBetweenShots = 1;
 

@@ -14,6 +14,7 @@ public class TowerPlace : MonoBehaviour
         {
             currentSelectedTower = newTower;
             currentSelectedTower.transform.position = spawnPos.transform.position;
+           
         }
     }
 

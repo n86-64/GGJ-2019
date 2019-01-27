@@ -552,6 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ee1057d153ee9489b2fe666be29ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 100
   searchRadius: 10
   timeBetweenShots: 1
   enemies: []
