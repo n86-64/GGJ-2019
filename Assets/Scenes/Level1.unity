@@ -2266,7 +2266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 100
-  gameOverMenu: {fileID: 0}
+  gameOverMenu: {fileID: 2059793204}
 --- !u!135 &1079795011
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4966,7 +4966,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1559583750973634, guid: 39783e15f324c7647b1957bebb8b0e53, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114272010912554402, guid: 39783e15f324c7647b1957bebb8b0e53,
         type: 2}
@@ -5526,6 +5526,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d043c6c164189c4186c03236498d2f2, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &2059793204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1443911630526262, guid: 3d043c6c164189c4186c03236498d2f2,
+    type: 2}
+  m_PrefabInternal: {fileID: 2059793203}
 --- !u!114 &2072384460 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114433570642975320, guid: cf0aa2ead0dfad04d82dcd5a9361f797,
