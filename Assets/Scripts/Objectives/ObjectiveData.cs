@@ -38,7 +38,7 @@ public class ObjectiveData : MonoBehaviour
 
 
 
-    public bool HaveTheRent()
+    public void HaveTheRent()
     {
         if (money <= rent)
         {
@@ -58,12 +58,12 @@ public class ObjectiveData : MonoBehaviour
             Debug.Log("Oh No Were bankrupt.");
             GameObject.FindGameObjectWithTag("Player").SetActive(false);
             gameOverMenu.SetActive(true);
-            return false;
+            //return false;
         }
         else
         {
             money -= rent;
-            return true;
+//return true;
         }
     }
 

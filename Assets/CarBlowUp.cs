@@ -52,8 +52,9 @@ public class CarBlowUp : MonoBehaviour
         }
                
 
-        yield return new WaitForSeconds(1.0f);
-
+        yield return new WaitForSeconds(0.8f);
+        WaveController.instance.activeUnits.Remove(gameObject);
+        yield return new WaitForSeconds(0.2f);
         Destroy(car.parent.gameObject);
     }
 }
