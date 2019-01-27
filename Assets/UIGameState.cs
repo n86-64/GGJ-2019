@@ -52,7 +52,7 @@ public class UIGameState : MonoBehaviour
     {
         if (WaveController.instance)
         {
-            waveUI.GetComponent<Text>().text = "WAVE\n" + (WaveController.instance.currentWave + 1) + " out of " + WaveController.instance.waves.Length;
+            waveUI.GetComponent<Text>().text = "WAVE\n" + (WaveController.instance.currentWave) + " out of " + WaveController.instance.waves.Length;
         }
     }
 }
