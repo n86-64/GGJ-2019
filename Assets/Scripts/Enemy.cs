@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public Vector3 offsetPosition;
 
     public int health = 10;
-    public int damage = 2;
+    public float damage = 3.0f;
     public int moveSpeed = 20;
 
     public int lifetime = 100;
@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     public int ticksTilDamaged = 100;
 
     private int damageTicks = 0;
+
+    public float reward = 4.0f;
 
     private void Awake()
     {
@@ -80,6 +82,7 @@ public class Enemy : MonoBehaviour
         else
         {
             health = 0;
+            GameObject.FindGameObjectWithTag("Objectives").GetComponent<ObjectiveData>().addMoney(reward);
 
             Debug.Log("RIP");
         }
@@ -110,5 +113,14 @@ public class Enemy : MonoBehaviour
         StartCoroutine(GetComponent<CarBlowUp>().ShrinkCar());
 
         GetComponent<Movement>().dying = true;
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.GetComponent<ObjectiveData>())
+        {
+            collider.gameObject.GetComponent<ObjectiveData>().TakeDamage(damage);
+        }
+        
     }
 }
