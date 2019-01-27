@@ -84,7 +84,11 @@ public class WaveController : MonoBehaviour
         {
             yield return null;
         }
-        yield return new WaitForSeconds(t);
-        StartCoroutine(SpawnNextWave());
+
+        if (ObjectiveData.instance.HaveTheRent())
+        {
+            yield return new WaitForSeconds(t);
+            StartCoroutine(SpawnNextWave());
+        }
     }
 }
