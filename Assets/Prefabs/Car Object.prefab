@@ -310,7 +310,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300459659303002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.25, y: 0, z: 0}
+  m_LocalPosition: {x: 5.667738, y: 0.21914086, z: 26.759792}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4236359738117840}
@@ -689,6 +689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  origin: {x: 0, y: 0, z: 0}
   offsetPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114142255098643196
 MonoBehaviour:
@@ -701,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad4126d86b05f44b1fceb38b649e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  routeController: {fileID: 0}
   moveToPoint: {x: 0, y: 0, z: 0}
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
