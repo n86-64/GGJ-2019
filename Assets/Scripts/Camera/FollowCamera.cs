@@ -19,7 +19,7 @@ public class FollowCamera : MonoBehaviour
         if (scrollToZoom)
         {
             camZoom -= Input.GetAxis("Mouse ScrollWheel") * 5;
-            Debug.Log("cam zoom " + camZoom);
+            //Debug.Log("cam zoom " + camZoom);
             cam.orthographicSize = Mathf.Clamp(camZoom, 3, 30);
         }
 
