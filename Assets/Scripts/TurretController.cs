@@ -6,6 +6,7 @@ public class TurretController : Tower
 {
     public GameObject gun; 
     public GameObject bulletPrefab;
+    public Transform bulletSpawnPosition;
     private List<GameObject> bullets;
     private int amountToPool = 20;
 
@@ -51,7 +52,7 @@ public class TurretController : Tower
         if (timeElapsed > timeBetweenShots)
         {
             Bullet bullet = GetBullet().GetComponent<Bullet>();
-            bullet.origin = transform.position;
+            bullet.origin = bulletSpawnPosition.position;
             bullet.target = enemy.transform;
             bullet.gameObject.SetActive(true);
 

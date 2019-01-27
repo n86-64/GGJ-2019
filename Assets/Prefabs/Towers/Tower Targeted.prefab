@@ -353,10 +353,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   searchRadius: 10
-  timeBetweenShots: 1
+  timeBetweenShots: 0.5
   enemies: []
+  gun: {fileID: 0}
   bulletPrefab: {fileID: 1138708420968802, guid: 57b744af5e99f644cb4d9804e5b6f8a7,
     type: 2}
+  bulletSpawnPosition: {fileID: 0}
   psBarrelSmoke: {fileID: 198299684141737328}
   psBarrelSparks: {fileID: 198669620006342326}
 --- !u!114 &114485757018064516
@@ -373,8 +375,10 @@ MonoBehaviour:
   searchRadius: 10
   timeBetweenShots: 1
   enemies: []
+  gun: {fileID: 1688847124192740}
   bulletPrefab: {fileID: 1138708420968802, guid: 57b744af5e99f644cb4d9804e5b6f8a7,
     type: 2}
+  bulletSpawnPosition: {fileID: 4227020866968182}
   psBarrelSmoke: {fileID: 198590027429070020, guid: c848509db9b9f1046b922c902526e725,
     type: 2}
   psBarrelSparks: {fileID: 198419658660824108, guid: 58da6101bb2b547458b3aadea4107b35,

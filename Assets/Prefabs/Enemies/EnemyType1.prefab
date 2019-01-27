@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  origin: {x: 0, y: 0, z: 0}
   offsetPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114843652256226522
 MonoBehaviour:
@@ -138,9 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad4126d86b05f44b1fceb38b649e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  routeController: {fileID: 0}
   moveToPoint: {x: 0, y: 0, z: 0}
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
   currentPointIndex: 0
+  maxSpeed: 8
+  acceleration: 8
   distanceFromPointCheck: 5
   canMove: 1
