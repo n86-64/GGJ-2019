@@ -21,6 +21,10 @@ public class Enemy : MonoBehaviour
 
     public int lifetime = 100;
 
+    public int ticksTilDamaged = 100;
+
+    private int damageTicks = 0;
+
     private void Awake()
     {
         transform.position = origin + offsetPosition;
@@ -73,6 +77,18 @@ public class Enemy : MonoBehaviour
             health = 0;
 
             Debug.Log("RIP");
+        }
+    }
+
+    public void GetMicroHit()
+    {
+        damageTicks++;
+
+        if (damageTicks > ticksTilDamaged)
+        {
+            damageTicks = 0;
+
+            getHit(1);
         }
     }
 
