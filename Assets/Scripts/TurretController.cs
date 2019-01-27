@@ -33,10 +33,17 @@ public class TurretController : Tower
         GameObject closestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
-            if (Vector3.Distance(transform.position, enemy.transform.position) < previousDistance)
+            if (enemy)
             {
-                previousDistance = Vector3.Distance(transform.position, enemy.transform.position);
-                closestEnemy = enemy;
+                if (Vector3.Distance(transform.position, enemy.transform.position) < previousDistance)
+                {
+                    previousDistance = Vector3.Distance(transform.position, enemy.transform.position);
+                    closestEnemy = enemy;
+                }
+            }
+            else
+            {
+                previousDistance = 100;
             }
         }
 

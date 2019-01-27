@@ -15,41 +15,65 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public Vector3 offsetPosition;
 
-    private int health = 10;
-    private int damage = 2;
-    private int moveSpeed = 20;
+    public int health = 10;
+    public int damage = 2;
+    public int moveSpeed = 20;
 
-    private int lifetime = 100;
+    public int lifetime = 100;
 
     private void Awake()
     {
         transform.position = origin + offsetPosition;
 
-        switch (type)
-        {
-            case EnemyType.RATS:
-                health = 10;
-                damage = 2;
-                moveSpeed = 15;
-                break;
-            case EnemyType.BURGLARS:
-                health = 10;
-                damage = 2;
-                moveSpeed = 15;
-                break;
-            case EnemyType.CLUBBERS:
-                health = 10;
-                damage = 2;
-                moveSpeed = 15;
-                break;
-        }
+        //switch (type)
+        //{
+        //    case EnemyType.RATS:
+        //        health = 200;
+        //        damage = 2;
+        //        moveSpeed = 15;
+        //        break;
+        //    case EnemyType.BURGLARS:
+        //        health = 10;
+        //        damage = 2;
+        //        moveSpeed = 15;
+        //        break;
+        //    case EnemyType.CLUBBERS:
+        //        health = 10;
+        //        damage = 2;
+        //        moveSpeed = 15;
+        //        break;
+        //}
 
         StartCoroutine(DestroyAfterLifetime());
+    }
+
+    private void Update()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public int GetMoveSpeed()
     {
         return moveSpeed;
+    }
+
+    public void getHit(int damage)
+    {
+        if (damage < health)
+        {
+            health -= damage;
+
+            Debug.Log("Ow, HP left: " + health);
+        }
+        else
+        {
+            health = 0;
+
+            Debug.Log("RIP");
+        }
     }
 
     IEnumerator DestroyAfterLifetime()

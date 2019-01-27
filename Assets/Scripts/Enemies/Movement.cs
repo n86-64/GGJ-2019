@@ -76,7 +76,7 @@ public class Movement : MonoBehaviour
 
             RotateTowardsPoint();
 
-            if (Vector3.Distance(transform.position, moveToPoint) <= distanceFromPointCheck)
+            if (Vector3.Distance(transform.position, new Vector3(moveToPoint.x, transform.position.y, moveToPoint.z)) <= distanceFromPointCheck)
             {
                 CheckNextPoint();
             }

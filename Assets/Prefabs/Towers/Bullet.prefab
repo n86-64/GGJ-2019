@@ -130,6 +130,7 @@ MonoBehaviour:
   target: {fileID: 0}
   origin: {x: 0, y: 0, z: 0}
   bulletSpeed: 20
+  damage: 3
 --- !u!135 &135180226947108246
 SphereCollider:
   m_ObjectHideFlags: 1
