@@ -20,14 +20,20 @@ public class Enemy : MonoBehaviour
     public Vector3 offsetPosition;
 
     public int health = 10;
-    public int damage = 2;
+    public float damage = 3.0f;
     public int moveSpeed = 20;
 
     public int lifetime = 100;
 
     public int ticksTilDamaged = 100;
 
-    private int damageTicks = 0;
+    private int damageTicks = 0; 
+    
+    private Vector3 checkPos;
+    private float timeStill;
+    private float timeMoving;
+
+    public float reward = 4.0f;
 
     private void Awake()
     {
@@ -66,6 +72,24 @@ public class Enemy : MonoBehaviour
         {
             BlowUpCar();
         }
+
+        if (Vector3.Distance(transform.position, checkPos) < 1)
+        {
+            timeStill += Time.deltaTime;
+            if (timeStill > 10)
+            {
+                health = 0;
+            }
+        }
+        else
+        {
+            timeMoving += Time.deltaTime;
+            if (timeMoving > 1)
+            {
+                checkPos = transform.position;
+                timeMoving = 0;
+            }
+        }
     }
 
     public int GetMoveSpeed()
@@ -84,6 +108,7 @@ public class Enemy : MonoBehaviour
         else
         {
             health = 0;
+            GameObject.FindGameObjectWithTag("Objectives").GetComponent<ObjectiveData>().addMoney(reward);
 
             Debug.Log("RIP");
         }
@@ -118,4 +143,14 @@ public class Enemy : MonoBehaviour
 
         GetComponent<Movement>().dying = true;
     }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.GetComponent<ObjectiveData>())
+        {
+            collider.gameObject.GetComponent<ObjectiveData>().TakeDamage(damage);
+        }
+        
+    }
 }
+   

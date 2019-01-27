@@ -52,23 +52,99 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ratPrefab: {fileID: 1300459659303002, guid: 9394c2d3edd863e4cac1ef221a4b8070, type: 2}
-  burglarPrefab: {fileID: 1300459659303002, guid: 9394c2d3edd863e4cac1ef221a4b8070,
+  burglarPrefab: {fileID: 1208548215554986, guid: 888426d4e15944d4da1937f586858985,
     type: 2}
   clubberPrefab: {fileID: 1300459659303002, guid: 9394c2d3edd863e4cac1ef221a4b8070,
     type: 2}
-  positionOffset: {x: -10, y: 10}
+  positionOffset: {x: -20, y: 0}
   waves:
   - enemies:
-    - type: 0
-      count: 8
-      intervalUntilNext: 5
+    - type: 1
+      count: 2
+      intervalUntilNext: 2
       route: {fileID: 0}
     - type: 0
-      count: 8
-      intervalUntilNext: 5
+      count: 2
+      intervalUntilNext: 2
       route: {fileID: 0}
     - type: 0
-      count: 8
+      count: 2
+      intervalUntilNext: 2
+      route: {fileID: 0}
+    timeBeforeNextSpawn: 4
+    strength: 0
+  - enemies:
+    - type: 1
+      count: 5
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    - type: 0
+      count: 5
+      intervalUntilNext: 5
+      route: {fileID: 0}
+    - type: 1
+      count: 5
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    - type: 0
+      count: 5
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    timeBeforeNextSpawn: 4
+    strength: 0
+  - enemies:
+    - type: 1
+      count: 5
+      intervalUntilNext: 10
+      route: {fileID: 0}
+    - type: 1
+      count: 10
+      intervalUntilNext: 10
+      route: {fileID: 0}
+    - type: 0
+      count: 15
+      intervalUntilNext: 5
+      route: {fileID: 0}
+    timeBeforeNextSpawn: 5
+    strength: 0
+  - enemies:
+    - type: 1
+      count: 10
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    - type: 1
+      count: 10
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    - type: 1
+      count: 10
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    timeBeforeNextSpawn: 3
+    strength: 0
+  - enemies:
+    - type: 0
+      count: 10
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    - type: 0
+      count: 10
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    - type: 0
+      count: 10
+      intervalUntilNext: 5
+      route: {fileID: 0}
+    - type: 1
+      count: 10
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    - type: 1
+      count: 10
+      intervalUntilNext: 0
+      route: {fileID: 0}
+    - type: 1
+      count: 10
       intervalUntilNext: 5
       route: {fileID: 0}
     timeBeforeNextSpawn: 4

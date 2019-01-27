@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4628904190451388}
   - component: {fileID: 198299684141737328}
   - component: {fileID: 199609236450767014}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BarrelSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4000115842212786}
   - component: {fileID: 198669620006342326}
   - component: {fileID: 199795468680769718}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BarrelSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4591765622310976}
   - component: {fileID: 33021156234745082}
   - component: {fileID: 23372190456931384}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 136150382947841976}
   - component: {fileID: 114485757018064516}
   - component: {fileID: 135625853998490990}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tower Targeted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 33267127424588658}
   - component: {fileID: 23948400393075710}
   - component: {fileID: 135850095197370874}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Targeted Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4227020866968182}
   - component: {fileID: 114198175526751982}
   - component: {fileID: 54683274287604530}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BulletSpawn
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -359,8 +359,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1138708420968802, guid: 57b744af5e99f644cb4d9804e5b6f8a7,
     type: 2}
   bulletSpawnPosition: {fileID: 0}
-  psBarrelSmoke: {fileID: 198299684141737328}
-  psBarrelSparks: {fileID: 198669620006342326}
 --- !u!114 &114485757018064516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,10 +377,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1138708420968802, guid: 57b744af5e99f644cb4d9804e5b6f8a7,
     type: 2}
   bulletSpawnPosition: {fileID: 4227020866968182}
-  psBarrelSmoke: {fileID: 198590027429070020, guid: c848509db9b9f1046b922c902526e725,
-    type: 2}
-  psBarrelSparks: {fileID: 198419658660824108, guid: 58da6101bb2b547458b3aadea4107b35,
-    type: 2}
 --- !u!135 &135625853998490990
 SphereCollider:
   m_ObjectHideFlags: 1

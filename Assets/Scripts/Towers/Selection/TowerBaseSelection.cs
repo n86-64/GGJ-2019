@@ -43,24 +43,34 @@ public class TowerBaseSelection : MonoBehaviour
         // Generate a raycast
         Vector3 screenPoint = Camera.main.ScreenToViewportPoint(Input.mousePosition) * new Vector2(1920.0f, 1080.0f);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out hitObjects, 1000.0f);
+        Physics.Raycast(ray, out hitObjects, Mathf.Infinity);
 
         if (hitObjects.collider)
         {
             // Hit an object. Select it.
-            if (selectedTowerBase == -1 &&
-                towerSelections.Contains(hitObjects.collider.gameObject.GetComponent<TowerPlace>()))
+            if (towerSelections.Contains(hitObjects.collider.gameObject.GetComponent<TowerPlace>()))
             {
                 selectedTowerBase = towerSelections.IndexOf(hitObjects.collider.gameObject.GetComponent<TowerPlace>());
-                Debug.Log("TowerSelected: " + towerSelections[selectedTowerBase].gameObject.name);
-                UISelectionObject.GetComponent<RectTransform>().anchoredPosition = screenPoint;
-                UISelectionObject.SetActive(true);
+
+                if (!towerSelections[selectedTowerBase].hasTower())
+                {
+                    Debug.Log("TowerSelected: " + towerSelections[selectedTowerBase].gameObject.name);
+                    UISelectionObject.GetComponent<RectTransform>().anchoredPosition = screenPoint;
+                    UISelectionObject.SetActive(true);
+                }
+                else
+                {
+                    selectedTowerBase = -1;
+                }
             }
-            else
-            {
-                selectedTowerBase = -1;
-                UISelectionObject.SetActive(false);
-            }
+            //else
+            //{
+            //    if(selectedTowerBase == -1)
+            //    {
+
+            //    }
+            //    UISelectionObject.SetActive(false);
+            //}
         }
 
     }

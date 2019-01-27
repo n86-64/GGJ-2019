@@ -811,7 +811,7 @@ Prefab:
     - target: {fileID: 114044786340313322, guid: ca4358319f0360d48bb751f17bed63cd,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level1
+      value: Level1 Copy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca4358319f0360d48bb751f17bed63cd, type: 2}

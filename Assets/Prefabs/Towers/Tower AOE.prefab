@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 136278097417557146}
   - component: {fileID: 114035288028154314}
   - component: {fileID: 135503817660261570}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tower AOE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 33983049863940270}
   - component: {fileID: 23413842449527204}
   - component: {fileID: 135078709529409708}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AOE Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 4216973442119426}
   - component: {fileID: 198428368857291142}
   - component: {fileID: 199200843129361112}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FreezeBlast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 33982742706074156}
   - component: {fileID: 23932093397185822}
   - component: {fileID: 136243879077126100}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4521133091005036}
   - component: {fileID: 54388892754425980}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BulletSpawn
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -324,7 +324,6 @@ MonoBehaviour:
   searchRadius: 10
   timeBetweenShots: 1
   enemies: []
-  psFreeze: {fileID: 198428368857291142}
 --- !u!135 &135078709529409708
 SphereCollider:
   m_ObjectHideFlags: 1

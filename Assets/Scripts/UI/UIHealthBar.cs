@@ -9,11 +9,12 @@ public class UIHealthBar : MonoBehaviour {
     private float multiplier = 0.1f;
 
     public Image bar;
+    public Image backBar;
     public float barLength = 100.0f;
 
     private void Start()
     {
-        barLength = bar.rectTransform.rect.width;
+        barLength = backBar.rectTransform.rect.width;
     }
 
     public void setMultiplier(float newMultiplier)

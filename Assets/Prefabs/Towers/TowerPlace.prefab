@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33339426718663098}
   - component: {fileID: 23441439786381532}
   - component: {fileID: 136996894037374098}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TowerBaseObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

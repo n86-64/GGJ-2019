@@ -9,6 +9,7 @@ TagManager:
   - GameOver
   - MasterPositions
   - Upgrade
+  - Objectives
   layers:
   - Default
   - TransparentFX

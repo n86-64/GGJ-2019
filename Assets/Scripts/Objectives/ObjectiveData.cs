@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObjectiveData : MonoBehaviour
 {
+    public static ObjectiveData instance;
+
     [SerializeField]
     public float money = 100.0f;
     public float rent = 0.0f;
@@ -15,6 +17,7 @@ public class ObjectiveData : MonoBehaviour
     
     void Start()
     {
+        instance = this;
         gameOverMenu = GameObject.FindGameObjectWithTag("GameOver");
         gameOverMenu.SetActive(false);
     }
@@ -22,22 +25,22 @@ public class ObjectiveData : MonoBehaviour
     void Update()
     {
 #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKey(KeyCode.M))
         {
             money += 10.0f;
         }
-#endif
-
-
-        if (money <= 0.0f || Input.GetKeyDown(KeyCode.K))
+        else if(Input.GetKey(KeyCode.N))
         {
-            HaveTheRent();
+            money -= 10.0f;
         }
+#endif
     }
 
-    void HaveTheRent()
+
+
+    public bool HaveTheRent()
     {
-        if (money <= rent || Input.GetKeyDown(KeyCode.K))
+        if (money <= rent)
         {
             // might have lives here
             
@@ -53,11 +56,14 @@ public class ObjectiveData : MonoBehaviour
 
             // Im Dead end the game.
             Debug.Log("Oh No Were bankrupt.");
+            GameObject.FindGameObjectWithTag("Player").SetActive(false);
             gameOverMenu.SetActive(true);
+            return false;
         }
         else
         {
             money -= rent;
+            return true;
         }
     }
 
