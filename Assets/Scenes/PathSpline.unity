@@ -394,15 +394,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad4126d86b05f44b1fceb38b649e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController: {fileID: 0}
-  rb: {fileID: 0}
+  routeController: {fileID: 0}
   moveToPoint: {x: 0, y: 0, z: 0}
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
   currentPointIndex: 0
   distanceFromPointCheck: 0
-  tempSpeed: 0
-  rotationSpeed: 0
   canMove: 0
 --- !u!1 &517884303
 GameObject:
@@ -524,15 +521,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad4126d86b05f44b1fceb38b649e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController: {fileID: 38247258}
-  rb: {fileID: 0}
+  routeController: {fileID: 0}
   moveToPoint: {x: 0.94, y: 0.93, z: -5.25}
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
   currentPointIndex: 0
   distanceFromPointCheck: 0
-  tempSpeed: 0
-  rotationSpeed: 0
   canMove: 0
 --- !u!1001 &829418623
 Prefab:
@@ -576,6 +570,44 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb9219c0d2dd501409c5163ab6a4a1e0, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &829418624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: fb9219c0d2dd501409c5163ab6a4a1e0,
+    type: 3}
+  m_PrefabInternal: {fileID: 829418623}
+--- !u!1 &829418625 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: fb9219c0d2dd501409c5163ab6a4a1e0,
+    type: 3}
+  m_PrefabInternal: {fileID: 829418623}
+--- !u!64 &829418626
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 829418624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
+--- !u!64 &829418627
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 829418625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300008, guid: fb9219c0d2dd501409c5163ab6a4a1e0, type: 3}
 --- !u!1001 &930605733
 Prefab:
   m_ObjectHideFlags: 0
@@ -834,15 +866,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad4126d86b05f44b1fceb38b649e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController: {fileID: 38247258}
-  rb: {fileID: 0}
+  routeController: {fileID: 0}
   moveToPoint: {x: 0.94, y: 0.93, z: -5.25}
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
   currentPointIndex: 0
   distanceFromPointCheck: 0
-  tempSpeed: 0
-  rotationSpeed: 0
   canMove: 0
 --- !u!1001 &1341059228
 Prefab:
@@ -1013,15 +1042,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad4126d86b05f44b1fceb38b649e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController: {fileID: 38247258}
-  rb: {fileID: 0}
+  routeController: {fileID: 0}
   moveToPoint: {x: 0.94, y: 0.93, z: -5.25}
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
   currentPointIndex: 0
   distanceFromPointCheck: 0
-  tempSpeed: 0
-  rotationSpeed: 0
   canMove: 0
 --- !u!1001 &1503633477
 Prefab:
@@ -1108,15 +1134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad4126d86b05f44b1fceb38b649e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController: {fileID: 0}
-  rb: {fileID: 0}
+  routeController: {fileID: 0}
   moveToPoint: {x: 0, y: 0, z: 0}
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
   currentPointIndex: 0
   distanceFromPointCheck: 0
-  tempSpeed: 0
-  rotationSpeed: 0
   canMove: 0
 --- !u!1 &1752544711
 GameObject:
@@ -1161,15 +1184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad4126d86b05f44b1fceb38b649e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController: {fileID: 38247258}
-  rb: {fileID: 0}
+  routeController: {fileID: 0}
   moveToPoint: {x: 0.94, y: 0.93, z: -5.25}
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
   currentPointIndex: 0
   distanceFromPointCheck: 0
-  tempSpeed: 0
-  rotationSpeed: 0
   canMove: 0
 --- !u!1 &1822024641
 GameObject:
@@ -1280,15 +1300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad4126d86b05f44b1fceb38b649e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController: {fileID: 0}
-  rb: {fileID: 0}
+  routeController: {fileID: 0}
   moveToPoint: {x: 0, y: 0, z: 0}
   offsetToPoint: {x: 0, y: 0, z: 0}
   directionToPoint: {x: 0, y: 0, z: 0}
   currentPointIndex: 0
   distanceFromPointCheck: 0
-  tempSpeed: 0
-  rotationSpeed: 0
   canMove: 0
 --- !u!1001 &2049119998
 Prefab:
