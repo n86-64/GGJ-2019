@@ -608,6 +608,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 114724419625054470, guid: eac1b03583fbffd448f5364f20cf5cf5,
+        type: 2}
+      propertyPath: towersToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 114745654854382362, guid: 006e7b25186e5c94ebb959b3a8435aea,
+        type: 2}
+    - target: {fileID: 114724419625054470, guid: eac1b03583fbffd448f5364f20cf5cf5,
+        type: 2}
+      propertyPath: towersToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 114851194338907864, guid: 165ce891968ae4e4bba8ed2e4ebe4967,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac1b03583fbffd448f5364f20cf5cf5, type: 2}
   m_IsPrefabAsset: 0
