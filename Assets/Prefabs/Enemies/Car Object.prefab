@@ -1180,7 +1180,8 @@ MonoBehaviour:
   damage: 2
   moveSpeed: 20
   lifetime: 80
-  ticksTilDamaged: 100
+  ticksTilDamaged: 25
+  reward: 4
 --- !u!114 &114142255098643196
 MonoBehaviour:
   m_ObjectHideFlags: 1
