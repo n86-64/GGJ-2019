@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1229409325957212}
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: -10.613358, y: 14.280001, z: -8.87}
+  m_LocalPosition: {x: -36.3, y: 54.2, z: -34.6}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4230206739831524}
@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1490340367862276}
   m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.48, y: 0, z: 9.78}
+  m_LocalPosition: {x: 10.4, y: 0, z: 28.57}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4221550521962676}
@@ -131,6 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20952905668239414}
   objToFollow: {fileID: 0}
-  speed: 1
+  speed: 3
   zoomSpeed: 1
   scrollToZoom: 1
