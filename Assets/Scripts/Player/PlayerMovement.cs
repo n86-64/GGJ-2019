@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // movement
-    private Rigidbody rb;
+    public Rigidbody rb;
     Vector3 velocity;
     public GameObject playerObject;
 
@@ -18,8 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start ()
     {
-        rb = GetComponent<Rigidbody>();
-
         Cursor.lockState = CursorLockMode.None;
 	}
 	

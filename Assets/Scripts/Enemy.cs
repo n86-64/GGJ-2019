@@ -55,7 +55,12 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            BlowUpCar();
+        }
+
+        if (Input.GetKey("m"))
+        {
+            BlowUpCar();
         }
     }
 
@@ -70,7 +75,7 @@ public class Enemy : MonoBehaviour
         {
             health -= damage;
 
-            Debug.Log("Ow, HP left: " + health);
+            //Debug.Log("Ow, HP left: " + health);
         }
         else
         {
@@ -95,6 +100,15 @@ public class Enemy : MonoBehaviour
     IEnumerator DestroyAfterLifetime()
     {
         yield return new WaitForSeconds(lifetime);
-        Destroy(gameObject);
+        BlowUpCar();
+    }
+
+    private void BlowUpCar()
+    {
+        // enable particle effects (and play)
+        StartCoroutine(GetComponent<CarBlowUp>().Particles());
+        StartCoroutine(GetComponent<CarBlowUp>().ShrinkCar());
+
+        GetComponent<Movement>().dying = true;
     }
 }
