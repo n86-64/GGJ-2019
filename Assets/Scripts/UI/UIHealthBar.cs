@@ -16,6 +16,11 @@ public class UIHealthBar : MonoBehaviour {
     {
 
 	}
+
+    public void setMultiplier(float newMultiplier)
+    {
+        multiplier = newMultiplier;
+    }
 	
 	// Update is called once per frame
 	void Update ()
