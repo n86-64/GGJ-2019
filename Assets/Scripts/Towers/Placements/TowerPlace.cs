@@ -17,6 +17,10 @@ public class TowerPlace : MonoBehaviour
         }
     }
 
+    public void hasTower()
+    {
+    }
+
     void clearTower()
     {
         // TODO - Destroy the tower. 
