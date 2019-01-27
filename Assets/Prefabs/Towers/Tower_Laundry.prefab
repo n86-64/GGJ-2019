@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4102966564382780}
   - component: {fileID: 33942808984216298}
   - component: {fileID: 23486097188072250}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WashingBasket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4258793335620160}
   - component: {fileID: 114851194338907864}
   - component: {fileID: 135368207241553058}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tower_Laundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4501519052250742}
   - component: {fileID: 198343035055215094}
   - component: {fileID: 199081024661829502}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4723235655425710}
   - component: {fileID: 33559814036816796}
   - component: {fileID: 23571574045606866}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4000952229915026}
   - component: {fileID: 33373777673381178}
   - component: {fileID: 23688391053895554}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DirtyPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4818129223821606}
   - component: {fileID: 33869947924503698}
   - component: {fileID: 23660740959727590}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sock4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4171426685184492}
   - component: {fileID: 198039754572871458}
   - component: {fileID: 199692788237637878}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FreezeBlast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4230780917585920}
   - component: {fileID: 33439380666764866}
   - component: {fileID: 23018276103265240}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4685552017678990}
   - component: {fileID: 33405493235156950}
   - component: {fileID: 23892483704329932}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
