@@ -2,27 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Objective : MonoBehaviour
+public class ObjectiveData : MonoBehaviour
 {
     [SerializeField]
-    private float money = 100.0f;
-    private float rent = 0.0f;
+    public float money = 100.0f;
+    public float rent = 0.0f;
 
-    private int lives = 0;
+    public int lives = 2;
 
     [SerializeField]
     private GameObject gameOverMenu;
-
-    // Use this for initialization
+    
     void Start()
     {
         gameOverMenu = GameObject.FindGameObjectWithTag("GameOver");
         gameOverMenu.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            money += 10.0f;
+        }
+#endif
+
+
         if (money <= 0.0f || Input.GetKeyDown(KeyCode.K))
         {
             HaveTheRent();
@@ -34,9 +40,6 @@ public class Objective : MonoBehaviour
         if (money <= rent || Input.GetKeyDown(KeyCode.K))
         {
             // might have lives here
-
-            // would have to set it somewhere else, here is fine to clear a console warning
-            lives = 1;
             
             // remove a life for not paying rent
             if (lives > 1)

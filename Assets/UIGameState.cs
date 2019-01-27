@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIGameState : MonoBehaviour {
-
-    private WaveController waveController;
-    private Objective levelObjective;
+public class UIGameState : MonoBehaviour
+{
+    private ObjectiveData levelObjective;
 
     // properties
     public GameObject quotaCount;
@@ -15,14 +14,11 @@ public class UIGameState : MonoBehaviour {
     public GameObject moneyCount;
     public GameObject waveCount;
 
-    // Use this for initialization
     void Start()
     {
-        waveController = FindObjectOfType<WaveController>();
-        levelObjective = FindObjectOfType<Objective>();
+        levelObjective = FindObjectOfType<ObjectiveData>();
     }
 
-    // Update is called once per frame
     void Update ()
     {
         UpdateQuota();
@@ -34,7 +30,7 @@ public class UIGameState : MonoBehaviour {
     {
         if (levelObjective)
         {
-            quotaCount.GetComponent<Text>().text = "Quota: £" + Math.Round(levelObjective.getQuota(), 2);
+            quotaCount.GetComponent<Text>().text = "QUOTA $" + Math.Round(levelObjective.getQuota(), 2);
             quotaBar.GetComponent<UIHealthBar>().setMultiplier(levelObjective.getMoney() / levelObjective.getQuota());
         }
     }
@@ -43,15 +39,15 @@ public class UIGameState : MonoBehaviour {
     {
         if (levelObjective)
         {
-            moneyCount.GetComponent<Text>().text = "Money: £" + Math.Round(levelObjective.getMoney(), 2);
+            moneyCount.GetComponent<Text>().text = "$" + Math.Round(levelObjective.getMoney(), 2);
         }
     }
 
     void UpdateWaveCount()
     {
-        if (waveController)
+        if (WaveController.instance)
         {
-            waveCount.GetComponent<Text>().text = "Wave: " + (waveController.currentWave + 1) + "/" + waveController.waves.Length;
+            waveCount.GetComponent<Text>().text = "WAVE\n" + (WaveController.instance.currentWave + 1) + " out of " + WaveController.instance.waves.Length;
         }
     }
 }
