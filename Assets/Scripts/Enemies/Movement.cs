@@ -97,7 +97,7 @@ public class Movement : MonoBehaviour
         //Add points
         print("Enemy should die");
 
-        WaveController.instance.activeUnits.Remove(gameObject);
+        Debug.Log(WaveController.instance.activeUnits);
         //gameObject.SetActive(false);
         Destroy(gameObject);
     }
